@@ -150,6 +150,11 @@ a {
   padding-right: 0;
 }
 
+.intro-countdown .flipdown .rotor-group::before,
+.intro-countdown .flipdown .rotor-group::after {
+  display: none;
+}
+
 .intro-countdown .flipdown .rotor,
 .intro-countdown .flipdown .rotor-leaf,
 .intro-countdown .flipdown .rotor-leaf-front,

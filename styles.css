@@ -138,6 +138,44 @@ a {
   margin: 0;
 }
 
+.social-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6em;
+  margin-top: 22px;
+  color: #080808;
+  font-size: clamp(0.72rem, 1.3vw, 0.9rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.social-line span {
+  opacity: 0.62;
+}
+
+.telegram-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.32em;
+  transition: opacity 0.2s ease;
+}
+
+.telegram-link:hover {
+  opacity: 0.56;
+}
+
+.meta-disclaimer {
+  margin: 10px 0 0;
+  color: rgba(8, 8, 8, 0.48);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+}
+
 .intro-countdown .flipdown .rotor-group-heading {
   display: none;
 }

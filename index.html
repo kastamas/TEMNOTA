@@ -31,7 +31,16 @@
     <div class="scanlines"></div>
 
     <section class="intro-screen" aria-label="TMNT">
-      <img class="intro-logo" src="./tmnt-dark-logo-4x.png" alt="TMNT" />
+      <svg class="intro-logo" role="img" aria-label="TMNT" viewBox="0 0 919 275" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="tmnt-logo-clip">
+            <path d="M295.088 0L370.915 184.765H374.141L449.969 0H521.834L640.685 172.948H643.104V0H919V47.9367H834.702V275H777.16V47.9367H701.05V275H650.767L530.976 101.917H528.96V275H465.297V96.0085H463.011L391.755 273.658H353.304L282.046 95.3376H279.762V275H223.293V47.9367H141.84V275H84.2976V47.9367H0V0H295.088Z" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#tmnt-logo-clip)">
+          <image class="intro-logo-texture" href="./logo-texture.png" x="-220" y="-250" width="1500" height="1000" preserveAspectRatio="xMidYMid slice" />
+        </g>
+      </svg>
       <div class="intro-countdown" aria-label="Таймер до события">
         <span class="intro-countdown-label">6.06 TEMNOTA II: SIXXXSEVEN</span>
         <div id="flipdown" class="flipdown"></div>

@@ -89,7 +89,29 @@ a {
 }
 
 .intro-logo {
-  width: min(74vw, 860px);
+  width: min(74vw, 920px);
+  height: auto;
+  filter: contrast(1.18) brightness(0.86);
+  overflow: visible;
+}
+
+.intro-logo-texture {
+  animation: logo-texture-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes logo-texture-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  45% {
+    transform: translate3d(180px, -44px, 0) scale(1.04);
+  }
+
+  100% {
+    transform: translate3d(330px, 38px, 0) scale(1.02);
+  }
 }
 
 .intro-countdown {

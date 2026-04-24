@@ -92,7 +92,7 @@ a {
   width: min(74vw, 920px);
   height: auto;
   filter: contrast(1.18) brightness(0.86);
-  overflow: visible;
+  overflow: hidden;
 }
 
 .intro-logo-texture {
@@ -102,15 +102,15 @@ a {
 
 @keyframes logo-texture-drift {
   0% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0);
   }
 
   45% {
-    transform: translate3d(180px, -44px, 0) scale(1.04);
+    transform: translate3d(-220px, -36px, 0);
   }
 
   100% {
-    transform: translate3d(330px, 38px, 0) scale(1.02);
+    transform: translate3d(-430px, 30px, 0);
   }
 }
 

@@ -25,9 +25,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260427-1" />
     <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/src/flipdown.min.js" defer></script>
-    <script src="./script.js" defer></script>
+    <script src="./script.js?v=20260427-1" defer></script>
   </head>
   <body>
     <div class="noise"></div>
@@ -43,12 +43,15 @@
         <g clip-path="url(#tmnt-logo-clip)">
           <g class="intro-logo-texture">
             <image href="./logo-texture.webp" x="-220" y="-250" width="1500" height="1000" preserveAspectRatio="xMidYMid slice" />
-            <image href="./logo-texture.webp" x="1280" y="-250" width="1500" height="1000" preserveAspectRatio="xMidYMid slice" />
+            <image href="./logo-texture.webp" x="1120" y="-250" width="1500" height="1000" preserveAspectRatio="xMidYMid slice" />
           </g>
         </g>
       </svg>
       <div class="intro-countdown" aria-label="Таймер до события">
-        <span class="intro-countdown-label">6.06 TEMNOTA II: SIXXXSEVEN</span>
+        <span class="intro-countdown-label">
+          <span>6.06 TEMNOTA II: SIXXXSEVEN</span>
+          <span>Петрозаводск: Рядом, Литейная, 1</span>
+        </span>
         <div id="flipdown" class="flipdown"></div>
         <p class="social-line">
           <span>FOLLOW US:</span>
@@ -59,6 +62,85 @@
           <a class="telegram-link" href="https://vk.com/tmntptz" target="_blank" rel="noreferrer">VK</a>
         </p>
         <p class="meta-disclaimer">*Компания Meta запрещена в России</p>
+      </div>
+      <div class="intro-ticket-widget" aria-label="Покупка билетов">
+        <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
+        <script>
+          if (window.radario?.Widgets?.Event) {
+            radario.Widgets.Event({
+              params: {
+                accentColor: "rgba(0, 0, 0, 1)",
+                textBtnColor: "#FFFFFF",
+                configuration: 46,
+              },
+              buttonText: "БИЛЕТЫ",
+              standalone: false,
+              createButton: true,
+              eventId: 2670441,
+            });
+          }
+        </script>
+      </div>
+      <!-- <div class="headline-marquee" aria-hidden="true">
+        <div class="headline-marquee-track">
+          <span>ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР</span>
+          <span>ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР</span>
+        </div>
+      </div> -->
+    </section>
+    <!-- <section class="second-screen" aria-label="TEMNOTA">
+      <div class="second-slider" data-slider>
+        <div class="second-slide is-active">
+          <div class="second-content">
+            <h2 class="second-title">TEMNOTA I</h2>
+            <p class="second-description">
+              Это серия техно-вечеринок с приглашенными артистами и специально созданными декорациями
+            </p>
+          </div>
+        </div>
+        <div class="second-slide second-slide-bohemium">
+          <div class="second-content">
+            <h2 class="second-title">ХЕДЛАЙНЕР</h2>
+            <p class="second-description">
+              Хедлайнером первой вечеринки стал артист
+              <a class="second-link" href="https://soundcloud.com/iamti93" target="_blank" rel="noreferrer">Bohemium</a>,
+              заложивший хардгрув-гипнотик звучание в её фундамент
+            </p>
+          </div>
+        </div>
+        <div class="second-slide second-slide-decorations">
+          <div class="second-content">
+            <h2 class="second-title">ДЕКОРАЦИИ</h2>
+            <p class="second-description">
+              Декоратором выступила художница Юлия Крисанова, придумавшая и реализовавшая концептуальное оформление
+              для вечеринки
+            </p>
+          </div>
+        </div>
+        <button class="slider-button slider-button-prev" type="button" aria-label="Предыдущий слайд" data-slider-prev>
+          ‹
+        </button>
+        <button class="slider-button slider-button-next" type="button" aria-label="Следующий слайд" data-slider-next>
+          ›
+        </button>
+        <div class="slider-dots" aria-label="Слайды">
+          <button class="slider-dot is-active" type="button" aria-label="Слайд 1" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="Слайд 2" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="Слайд 3" data-slider-dot></button>
+        </div>
+      </div>
+    </section> -->
+    <section class="second-screen" aria-label="SIXXXSEVEN">
+      <div class="second-screen-content">
+        <p class="second-screen-kicker">[MAIN STAGE]</p>
+        <h2 class="second-screen-title">SIXXXSEVEN</h2>
+        <p class="second-screen-description">
+          Резидент команды
+          <a class="second-screen-link" href="https://t.me/kontrkult21" target="_blank" rel="noreferrer">KONTRKULT</a>
+          и основатель промо-группы
+          <a class="second-screen-link" href="https://t.me/bunker555040" target="_blank" rel="noreferrer">BUNKER</a>,
+          специализирующейся на андеграундных рейвах и выставках современного искусства
+        </p>
       </div>
     </section>
   </body>

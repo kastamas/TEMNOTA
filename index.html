@@ -25,9 +25,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260427-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260511-1" />
     <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/src/flipdown.min.js" defer></script>
-    <script src="./script.js?v=20260427-1" defer></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
+    <script src="./script.js?v=20260511-1" defer></script>
   </head>
   <body>
     <div class="noise"></div>
@@ -141,5 +142,32 @@
         </p>
       </div>
     </section>
+    <section class="location-screen" aria-label="ЛОКАЦИЯ">
+      <div class="location-content">
+        <p class="location-kicker">[LOCATION]</p>
+        <h2 class="location-title">КЛУБ «РЯДОМ»</h2>
+        <p class="location-description">территория бывшего бомбоубежища Онежского тракторного завода</p>
+      </div>
+      <div class="location-gallery" aria-label="Фотографии клуба Рядом">
+        <button class="location-gallery-item" type="button" aria-label="Открыть фото: вход в клуб Рядом">
+          <img src="./location-1.jpg" alt="Вход в клуб Рядом" loading="lazy" />
+        </button>
+        <button class="location-gallery-item" type="button" aria-label="Открыть фото: барная зона клуба Рядом">
+          <img src="./location-2.jpg" alt="Барная зона клуба Рядом" loading="lazy" />
+        </button>
+        <button class="location-gallery-item" type="button" aria-label="Открыть фото: интерьер клуба Рядом">
+          <img src="./location-3.jpg" alt="Интерьер клуба Рядом" loading="lazy" />
+        </button>
+      </div>
+      <div class="location-map" aria-label="Карта: Петрозаводск, Литейная площадь, 1">
+        <div id="location-map" class="location-map-canvas"></div>
+      </div>
+    </section>
+    <div class="photo-modal" aria-hidden="true" role="dialog" aria-label="Просмотр фотографии" tabindex="-1">
+      <button class="photo-modal-close" type="button" aria-label="Закрыть фотографию">×</button>
+      <button class="photo-modal-nav photo-modal-prev" type="button" aria-label="Предыдущее фото">‹</button>
+      <img class="photo-modal-image" src="" alt="" />
+      <button class="photo-modal-nav photo-modal-next" type="button" aria-label="Следующее фото">›</button>
+    </div>
   </body>
 </html>

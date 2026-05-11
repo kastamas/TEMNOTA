@@ -222,6 +222,13 @@ a {
   opacity: 0.68;
 }
 
+@media (min-width: 901px) {
+  .intro-screen,
+  .second-screen {
+    min-height: 100svh;
+  }
+}
+
 .location-screen {
   position: relative;
   z-index: 2;

@@ -206,7 +206,7 @@ a {
   margin: 0;
   color: #fff;
   font-size: clamp(0.92rem, 1.8vw, 1.28rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.35;
   text-align: center;
 }
@@ -216,16 +216,277 @@ a {
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
   transition: opacity 0.2s ease;
+  font-weight: 500;
 }
 
 .second-screen-link:hover {
   opacity: 0.68;
 }
 
+.second-screen-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  color: #fff;
+  font-size: clamp(0.72rem, 1.3vw, 0.88rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.second-screen-action:hover {
+  color: #050505;
+  background: #fff;
+}
+
+.second-screen-action:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
 @media (min-width: 901px) {
   .intro-screen,
   .second-screen {
     min-height: 100svh;
+  }
+
+  .second-screen-description {
+    width: min(100%, 640px);
+  }
+}
+
+.interview-screen {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(210px, 0.28fr) minmax(0, 0.72fr);
+  gap: clamp(30px, 6vw, 92px);
+  width: 100%;
+  padding: clamp(42px, 7vw, 90px) clamp(20px, 5vw, 54px);
+  color: #f4f4f1;
+  background: #050505;
+}
+
+.interview-screen[hidden] {
+  display: none;
+}
+
+.interview-heading {
+  position: sticky;
+  top: 32px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.interview-kicker {
+  margin: 0;
+  color: rgba(244, 244, 241, 0.62);
+  font-size: clamp(0.72rem, 1.4vw, 0.96rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.interview-title {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.2rem, 3.5vw, 3.6rem);
+  font-weight: 900;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.interview-title span {
+  display: block;
+}
+
+.location-gallery-item {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.location-gallery-item:focus-visible {
+  outline: 2px solid #050505;
+  outline-offset: 4px;
+}
+
+.interview-list {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vw, 44px);
+}
+
+.interview-item {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  column-gap: clamp(16px, 2vw, 26px);
+  padding-top: clamp(20px, 3vw, 30px);
+  border-top: 1px solid rgba(244, 244, 241, 0.22);
+  counter-increment: interview;
+}
+
+.interview-list {
+  counter-reset: interview;
+}
+
+.interview-item::before {
+  content: "0" counter(interview);
+  color: rgba(244, 244, 241, 0.44);
+  font-size: clamp(0.86rem, 1.5vw, 1rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+}
+
+.interview-item h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.05rem, 2vw, 1.72rem);
+  font-weight: 900;
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.interview-item p {
+  grid-column: 2;
+  width: min(100%, 780px);
+  margin: 0;
+  color: rgba(244, 244, 241, 0.78);
+  font-size: clamp(0.92rem, 1.8vw, 1.28rem);
+  font-weight: 300;
+  line-height: 1.35;
+}
+
+.interview-item strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+.interview-item h3 + p {
+  margin-top: clamp(12px, 1.6vw, 18px);
+}
+
+.interview-item p + p {
+  margin-top: 0.78em;
+}
+
+.interview-link {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.interview-link:hover {
+  opacity: 0.72;
+}
+
+.interview-hide {
+  align-self: center;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid rgba(244, 244, 241, 0.64);
+  color: #f4f4f1;
+  background: transparent;
+  font: inherit;
+  font-size: clamp(0.72rem, 1.3vw, 0.88rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.interview-hide:hover {
+  color: #050505;
+  background: #f4f4f1;
+}
+
+.interview-hide:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .interview-screen {
+    grid-template-columns: 1fr;
+  }
+
+  .interview-heading {
+    position: static;
+  }
+
+  .interview-list {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 620px) {
+  .interview-screen {
+    padding: 42px 16px 54px;
+  }
+
+  .interview-title {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    font-size: clamp(2.1rem, 10vw, 3.3rem);
+  }
+
+  .interview-title span {
+    display: block;
+  }
+
+  .second-screen-description,
+  .interview-item p,
+  .location-description {
+    font-size: clamp(0.88rem, 1.5vw, 1.12rem);
+  }
+
+  .interview-item p {
+    font-weight: 400;
+  }
+
+  .second-screen-description,
+  .location-description {
+    font-weight: 500;
+  }
+
+  .interview-item {
+    grid-template-columns: 1fr;
+  }
+
+  .interview-item::before {
+    margin-bottom: 10px;
+  }
+
+  .interview-item p {
+    grid-column: 1;
   }
 }
 
@@ -266,7 +527,7 @@ a {
   width: var(--grid-10);
   margin: 0;
   color: #050505;
-  font-size: clamp(2.35rem, 8.9vw, 7.8rem);
+  font-size: clamp(2.15rem, 7.8vw, 6.8rem);
   font-weight: 900;
   line-height: 0.9;
   text-transform: uppercase;
@@ -277,7 +538,7 @@ a {
   margin: 0;
   color: rgba(5, 5, 5, 0.46);
   font-size: clamp(0.92rem, 1.8vw, 1.28rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.35;
 }
 
@@ -287,21 +548,6 @@ a {
   gap: clamp(10px, 1.4vw, 18px);
   width: min(100%, var(--max-width));
   margin: 0 auto;
-}
-
-.location-gallery-item {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: zoom-in;
-  overflow: hidden;
-}
-
-.location-gallery-item:focus-visible {
-  outline: 2px solid #050505;
-  outline-offset: 4px;
 }
 
 .location-gallery-item img {

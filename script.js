@@ -9,6 +9,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }).start();
   }
 
+  const interviewSection = document.getElementById("interview");
+  const interviewOpenButton = document.querySelector(".second-screen-action");
+  const interviewHideButton = document.querySelector(".interview-hide");
+
+  const showInterview = () => {
+    if (!interviewSection || !interviewOpenButton) {
+      return;
+    }
+
+    interviewSection.hidden = false;
+    interviewOpenButton.setAttribute("aria-expanded", "true");
+    requestAnimationFrame(() => {
+      interviewSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  };
+
+  const hideInterview = () => {
+    if (!interviewSection || !interviewOpenButton) {
+      return;
+    }
+
+    interviewSection.hidden = true;
+    interviewOpenButton.setAttribute("aria-expanded", "false");
+    interviewOpenButton.scrollIntoView({ behavior: "smooth", block: "center" });
+    interviewOpenButton.focus();
+  };
+
+  interviewOpenButton?.addEventListener("click", (event) => {
+    event.preventDefault();
+    showInterview();
+  });
+
+  interviewHideButton?.addEventListener("click", hideInterview);
+
   const mapElement = document.getElementById("location-map");
 
   if (mapElement && typeof ymaps !== "undefined") {

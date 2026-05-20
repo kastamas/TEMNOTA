@@ -355,7 +355,7 @@ a {
 .artist-photo-card-sixxxseven {
   background:
     linear-gradient(180deg, rgba(5, 5, 5, 0.04), rgba(5, 5, 5, 0.26)),
-    url("./sixxxseven-bg.png") center / cover no-repeat;
+    url("./sixxxseven-bg.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.14);
@@ -364,7 +364,7 @@ a {
 .artist-photo-card-magica {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.26)),
-    url("./magica-noisy.png") center / cover no-repeat;
+    url("./magica-noisy.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.08);
@@ -373,7 +373,7 @@ a {
 .artist-photo-card-misha {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
-    url("./misha-live-bw.png") center / cover no-repeat;
+    url("./misha-live-bw.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.08);
@@ -382,7 +382,7 @@ a {
 .artist-photo-card-shelonya {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
-    url("./shelonya-noisy.png") center / cover no-repeat;
+    url("./shelonya-noisy.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.08);
@@ -391,7 +391,7 @@ a {
 .artist-photo-card-running-bunny {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
-    url("./running-bunny-noisy.png") center / cover no-repeat;
+    url("./running-bunny-noisy.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.08);
@@ -400,7 +400,7 @@ a {
 .artist-photo-card-lilakovaya {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
-    url("./lilakovaya-noisy.png") center / cover no-repeat;
+    url("./lilakovaya-noisy.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.08);
@@ -409,7 +409,7 @@ a {
 .artist-photo-card-kirille {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
-    url("./kirille-top.png") center / cover no-repeat;
+    url("./kirille-top.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.08);
@@ -418,7 +418,7 @@ a {
 .artist-photo-card-darya-duryevna {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
-    url("./darya-duryevna.png") center / cover no-repeat;
+    url("./darya-duryevna.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.08);
@@ -427,7 +427,7 @@ a {
 .artist-photo-card-wicthor {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
-    url("./wichtor.png") center / cover no-repeat;
+    url("./wichtor.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.08);
@@ -436,7 +436,7 @@ a {
 .artist-photo-card-linda {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
-    url("./linda.png") center / cover no-repeat;
+    url("./linda.webp") center / cover no-repeat;
   background-position: center;
   background-size: 100% 100%, cover;
   filter: grayscale(1) contrast(1.08);

@@ -140,32 +140,487 @@ a {
 .second-screen {
   position: relative;
   z-index: 2;
+  min-height: 98svh;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  background: #050505;
+}
+
+.artist-slider {
+  position: relative;
+  z-index: 2;
+  min-height: 98svh;
+  overflow: hidden;
+  touch-action: pan-y;
+  background: #050505;
+}
+
+.artist-stage-switch {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  z-index: 4;
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid rgba(244, 244, 241, 0.16);
+  background: rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(12px);
+  transform: translateX(-50%);
+}
+
+.artist-stage-button {
+  min-width: 126px;
+  padding: 9px 12px;
+  border: 0;
+  color: rgba(244, 244, 241, 0.62);
+  background: transparent;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.artist-stage-button:hover,
+.artist-stage-button.is-active {
+  color: #050505;
+  background: #f4f4f1;
+}
+
+.artist-stage-button:focus-visible {
+  outline: 2px solid #f4f4f1;
+  outline-offset: 3px;
+}
+
+.artist-slide {
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
   min-height: 98svh;
-  width: 100%;
   padding: 32px;
-  overflow: hidden;
-  background: #000;
+  opacity: 0;
+  transform: translateX(4%);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+  pointer-events: none;
 }
 
-.second-screen::before,
-.second-screen::after {
+.artist-slide::before,
+.artist-slide::after {
   content: "";
   position: absolute;
   inset: 0;
 }
 
-.second-screen::before {
-  z-index: 0;
-  background: url("./sixxxseven-bg.jpg") center / cover no-repeat;
-  transform-origin: center;
-  transition: transform 0.3s ease;
+.artist-slide.is-active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
-.second-screen::after {
-  z-index: 1;
-  background: linear-gradient(rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.58));
+.artist-slide-sixxxseven,
+.artist-slide-magica,
+.artist-slide-misha,
+.artist-slide-shelonya,
+.artist-slide-running-bunny,
+.artist-slide-lilakovaya,
+.artist-slide-kirille,
+.artist-slide-darya-duryevna,
+.artist-slide-wicthor,
+.artist-slide-linda {
+  grid-template-columns: minmax(280px, 440px) minmax(320px, 560px);
+  gap: clamp(24px, 3vw, 46px);
+  align-items: center;
+  justify-content: center;
+  padding: clamp(26px, 5vw, 64px);
+  color: #050505;
+  background: #f4f4f1;
+}
+
+.artist-slide-sixxxseven,
+.artist-slide-magica,
+.artist-slide-shelonya,
+.artist-slide-running-bunny,
+.artist-slide-lilakovaya,
+.artist-slide-kirille,
+.artist-slide-darya-duryevna,
+.artist-slide-wicthor,
+.artist-slide-linda {
+  color: #f4f4f1;
+  background: #050505;
+}
+
+.artist-slide-sixxxseven::before,
+.artist-slide-magica::before,
+.artist-slide-misha::before,
+.artist-slide-shelonya::before,
+.artist-slide-running-bunny::before,
+.artist-slide-lilakovaya::before,
+.artist-slide-kirille::before,
+.artist-slide-darya-duryevna::before,
+.artist-slide-wicthor::before,
+.artist-slide-linda::before {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(5, 5, 5, 0.06) 1px, transparent 1px);
+  background-size: 92px 92px;
+  opacity: 0.36;
+}
+
+.artist-slide-sixxxseven::before {
+  background:
+    linear-gradient(90deg, rgba(244, 244, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(244, 244, 241, 0.06) 1px, transparent 1px);
+  opacity: 0.2;
+}
+
+.artist-slide-magica::before,
+.artist-slide-shelonya::before,
+.artist-slide-running-bunny::before,
+.artist-slide-lilakovaya::before,
+.artist-slide-kirille::before,
+.artist-slide-darya-duryevna::before,
+.artist-slide-wicthor::before,
+.artist-slide-linda::before {
+  background:
+    linear-gradient(90deg, rgba(244, 244, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(244, 244, 241, 0.06) 1px, transparent 1px);
+  opacity: 0.2;
+}
+
+.artist-slide-sixxxseven::after,
+.artist-slide-magica::after,
+.artist-slide-misha::after,
+.artist-slide-shelonya::after,
+.artist-slide-running-bunny::after,
+.artist-slide-lilakovaya::after,
+.artist-slide-kirille::after,
+.artist-slide-darya-duryevna::after,
+.artist-slide-wicthor::after,
+.artist-slide-linda::after {
+  z-index: 0;
+  background: radial-gradient(circle at 18% 20%, rgba(5, 5, 5, 0.08), transparent 28%);
+}
+
+.artist-slide-sixxxseven::after {
+  background: radial-gradient(circle at 80% 22%, rgba(244, 244, 241, 0.12), transparent 28%);
+}
+
+.artist-slide-magica::after,
+.artist-slide-shelonya::after,
+.artist-slide-running-bunny::after,
+.artist-slide-lilakovaya::after,
+.artist-slide-kirille::after,
+.artist-slide-darya-duryevna::after,
+.artist-slide-wicthor::after,
+.artist-slide-linda::after {
+  background: radial-gradient(circle at 80% 22%, rgba(244, 244, 241, 0.12), transparent 28%);
+}
+
+.artist-photo-card,
+.artist-photo-wrap,
+.artist-info {
+  position: relative;
+  z-index: 2;
+}
+
+.artist-photo-card {
+  align-self: center;
+  justify-self: center;
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: min(440px, calc(100svh - 180px));
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(244, 244, 241, 0.1);
+  background: #090909;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: inset(0);
+  contain: paint;
+  overflow: hidden;
+}
+
+.artist-photo-card-sixxxseven {
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.04), rgba(5, 5, 5, 0.26)),
+    url("./sixxxseven-bg.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.14);
+}
+
+.artist-photo-card-magica {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.26)),
+    url("./magica-noisy.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.artist-photo-card-misha {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
+    url("./misha-live-bw.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.artist-photo-card-shelonya {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
+    url("./shelonya-noisy.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.artist-photo-card-running-bunny {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
+    url("./running-bunny-noisy.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.artist-photo-card-lilakovaya {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
+    url("./lilakovaya-noisy.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.artist-photo-card-kirille {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
+    url("./kirille-top.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.artist-photo-card-darya-duryevna {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
+    url("./darya-duryevna.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.artist-photo-card-wicthor {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
+    url("./wichtor.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.artist-photo-card-linda {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28)),
+    url("./linda.png") center / cover no-repeat;
+  background-position: center;
+  background-size: 100% 100%, cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.artist-slide-misha,
+.artist-slide-shelonya,
+.artist-slide-running-bunny,
+.artist-slide-lilakovaya,
+.artist-slide-kirille,
+.artist-slide-darya-duryevna,
+.artist-slide-wicthor,
+.artist-slide-linda {
+  color: #f4f4f1;
+  background: #050505;
+}
+
+.artist-slide-misha::before,
+.artist-slide-shelonya::before,
+.artist-slide-running-bunny::before,
+.artist-slide-lilakovaya::before,
+.artist-slide-kirille::before,
+.artist-slide-darya-duryevna::before,
+.artist-slide-wicthor::before,
+.artist-slide-linda::before {
+  background:
+    linear-gradient(90deg, rgba(244, 244, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(244, 244, 241, 0.06) 1px, transparent 1px);
+  opacity: 0.2;
+}
+
+.artist-slide-misha::after,
+.artist-slide-shelonya::after,
+.artist-slide-running-bunny::after,
+.artist-slide-lilakovaya::after,
+.artist-slide-kirille::after,
+.artist-slide-darya-duryevna::after,
+.artist-slide-wicthor::after,
+.artist-slide-linda::after {
+  background: radial-gradient(circle at 80% 22%, rgba(244, 244, 241, 0.12), transparent 28%);
+}
+
+.artist-photo-wrap {
+  align-self: end;
+  justify-self: center;
+  width: min(100%, 660px);
+}
+
+.artist-photo {
+  width: 100%;
+  max-height: calc(100svh - clamp(72px, 10vw, 128px));
+  object-fit: contain;
+  object-position: bottom center;
+  filter: contrast(1.08);
+}
+
+.artist-info {
+  align-self: center;
+  align-items: flex-start;
+  gap: clamp(14px, 2vw, 24px);
+  width: 100%;
+  min-width: 0;
+  transform: none;
+}
+
+.artist-info .second-screen-kicker,
+.artist-info .second-screen-title,
+.artist-info .second-screen-description {
+  color: #050505;
+  text-align: left;
+}
+
+.artist-info .second-screen-kicker {
+  color: rgba(5, 5, 5, 0.58);
+}
+
+.artist-info .second-screen-title {
+  width: min(100%, 620px);
+  max-width: 100%;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  white-space: normal;
+}
+
+.artist-slide-misha .second-screen-title {
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  white-space: nowrap;
+}
+
+.artist-info .second-screen-description {
+  width: min(100%, 560px);
+  color: rgba(244, 244, 241, 0.78);
+  font-size: clamp(0.92rem, 1.8vw, 1.28rem);
+  font-weight: 300;
+  line-height: 1.35;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  text-align: left;
+  text-wrap: balance;
+}
+
+.artist-slide-magica .second-screen-kicker,
+.artist-slide-magica .second-screen-title,
+.artist-slide-magica .second-screen-description,
+.artist-slide-misha .second-screen-kicker,
+.artist-slide-misha .second-screen-title,
+.artist-slide-misha .second-screen-description,
+.artist-slide-shelonya .second-screen-kicker,
+.artist-slide-shelonya .second-screen-title,
+.artist-slide-shelonya .second-screen-description,
+.artist-slide-running-bunny .second-screen-kicker,
+.artist-slide-running-bunny .second-screen-title,
+.artist-slide-running-bunny .second-screen-description,
+.artist-slide-lilakovaya .second-screen-kicker,
+.artist-slide-lilakovaya .second-screen-title,
+.artist-slide-lilakovaya .second-screen-description,
+.artist-slide-kirille .second-screen-kicker,
+.artist-slide-kirille .second-screen-title,
+.artist-slide-kirille .second-screen-description,
+.artist-slide-darya-duryevna .second-screen-kicker,
+.artist-slide-darya-duryevna .second-screen-title,
+.artist-slide-darya-duryevna .second-screen-description,
+.artist-slide-wicthor .second-screen-kicker,
+.artist-slide-wicthor .second-screen-title,
+.artist-slide-wicthor .second-screen-description,
+.artist-slide-linda .second-screen-kicker,
+.artist-slide-linda .second-screen-title,
+.artist-slide-linda .second-screen-description {
+  color: #f4f4f1;
+}
+
+.artist-slide-magica .second-screen-description,
+.artist-slide-misha .second-screen-description,
+.artist-slide-shelonya .second-screen-description,
+.artist-slide-running-bunny .second-screen-description,
+.artist-slide-lilakovaya .second-screen-description,
+.artist-slide-kirille .second-screen-description,
+.artist-slide-darya-duryevna .second-screen-description,
+.artist-slide-wicthor .second-screen-description,
+.artist-slide-linda .second-screen-description {
+  color: rgba(244, 244, 241, 0.78);
+}
+
+.artist-slide-magica .second-screen-kicker,
+.artist-slide-misha .second-screen-kicker,
+.artist-slide-shelonya .second-screen-kicker,
+.artist-slide-running-bunny .second-screen-kicker,
+.artist-slide-lilakovaya .second-screen-kicker,
+.artist-slide-kirille .second-screen-kicker,
+.artist-slide-darya-duryevna .second-screen-kicker,
+.artist-slide-wicthor .second-screen-kicker,
+.artist-slide-linda .second-screen-kicker {
+  color: rgba(244, 244, 241, 0.68) !important;
+}
+
+.artist-info-sixxxseven .second-screen-action {
+  border-color: rgba(244, 244, 241, 0.66);
+  color: #f4f4f1;
+}
+
+.artist-info-sixxxseven .second-screen-title {
+  font-size: clamp(3rem, 6vw, 5.6rem);
+}
+
+.artist-info-sixxxseven .second-screen-action:hover {
+  color: #050505;
+  background: #f4f4f1;
+}
+
+.artist-info-sixxxseven .second-screen-action:focus-visible {
+  outline-color: #f4f4f1;
+}
+
+.artist-slide-sixxxseven .second-screen-kicker,
+.artist-slide-sixxxseven .second-screen-title,
+.artist-slide-sixxxseven .second-screen-description {
+  color: #f4f4f1;
+}
+
+.artist-slide-sixxxseven .second-screen-description {
+  color: rgba(244, 244, 241, 0.78);
+}
+
+.artist-slide-sixxxseven .second-screen-kicker {
+  color: rgba(244, 244, 241, 0.68);
 }
 
 .second-screen-content {
@@ -176,6 +631,10 @@ a {
   align-items: center;
   gap: clamp(12px, 2vw, 24px);
   transform: translateY(5vh);
+}
+
+.second-screen-content.artist-info {
+  transform: none;
 }
 
 .second-screen-kicker {
@@ -253,14 +712,104 @@ a {
   outline-offset: 4px;
 }
 
+.slider-button {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0 0 4px;
+  border: 1px solid rgba(244, 244, 241, 0.52);
+  border-radius: 50%;
+  color: #f4f4f1;
+  background: rgba(0, 0, 0, 0.24);
+  font: inherit;
+  font-size: 30px;
+  line-height: 1;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.slider-button:hover {
+  color: #050505;
+  background: #f4f4f1;
+  border-color: #f4f4f1;
+}
+
+.slider-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.slider-button-prev {
+  left: 24px;
+}
+
+.slider-button-next {
+  right: 24px;
+}
+
+.slider-dots {
+  position: absolute;
+  right: 0;
+  bottom: 28px;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: max-content;
+  margin: 0 auto;
+  padding: 9px 12px;
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(12px);
+}
+
+.slider-dot {
+  width: 34px;
+  height: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(244, 244, 241, 0.38);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.slider-dot.is-active {
+  background: #f4f4f1;
+  transform: scaleX(1.28);
+}
+
 @media (min-width: 901px) {
   .intro-screen,
-  .second-screen {
+  .second-screen,
+  .artist-slider,
+  .artist-slide {
     min-height: 100svh;
   }
 
   .second-screen-description {
     width: min(100%, 640px);
+  }
+
+  .artist-info .second-screen-kicker,
+  .artist-info .second-screen-action {
+    align-self: flex-start;
+  }
+
+  .artist-slide-running-bunny .second-screen-title,
+  .artist-slide-darya-duryevna .second-screen-title {
+    font-size: clamp(3rem, 5vw, 4.6rem);
+    white-space: nowrap;
   }
 }
 
@@ -488,6 +1037,114 @@ a {
   .interview-item p {
     grid-column: 1;
   }
+
+  .slider-button {
+    top: auto;
+    bottom: 24px;
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+    transform: none;
+  }
+
+  .slider-button-prev {
+    left: 20px;
+  }
+
+  .slider-button-next {
+    right: 20px;
+  }
+
+  .slider-dots {
+    bottom: 24px;
+    gap: 6px;
+    padding: 8px 10px;
+  }
+
+  .slider-dot {
+    width: 17px;
+  }
+
+  .artist-stage-switch {
+    top: 16px;
+    width: calc(100% - 36px);
+    max-width: 320px;
+  }
+
+  .artist-stage-button {
+    flex: 1;
+    min-width: 0;
+    padding: 9px 8px;
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .artist-slide-sixxxseven,
+  .artist-slide-magica,
+  .artist-slide-misha,
+  .artist-slide-shelonya,
+  .artist-slide-running-bunny,
+  .artist-slide-lilakovaya,
+  .artist-slide-kirille,
+  .artist-slide-darya-duryevna,
+  .artist-slide-wicthor,
+  .artist-slide-linda {
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 0;
+    padding: clamp(74px, 11svh, 96px) 18px clamp(96px, 14svh, 132px);
+  }
+
+  .artist-photo-card {
+    width: min(100%, 260px);
+    height: min(calc(100vw - 36px), 260px);
+    max-width: none;
+    justify-self: center;
+  }
+
+  .artist-info {
+    margin-top: 24px;
+  }
+
+  .artist-photo-wrap {
+    align-self: end;
+    width: min(100%, 390px);
+  }
+
+  .artist-photo {
+    max-height: 46svh;
+  }
+
+  .artist-info {
+    align-items: flex-start;
+    gap: clamp(8px, 1.8svh, 14px);
+    width: min(100%, 350px);
+    justify-self: center;
+  }
+
+  .artist-info .second-screen-kicker,
+  .artist-info .second-screen-title,
+  .artist-info .second-screen-description {
+    text-align: left;
+  }
+
+  .artist-info .second-screen-title {
+    font-size: clamp(2.35rem, 12vw, 4.8rem);
+  }
+
+  .artist-slide-running-bunny .second-screen-title,
+  .artist-slide-darya-duryevna .second-screen-title {
+    font-size: clamp(1.95rem, 9.6vw, 3.4rem);
+    white-space: nowrap;
+  }
+
+  .artist-info .second-screen-description {
+    width: 100%;
+    padding-inline: 0;
+    text-wrap: balance;
+  }
+
 }
 
 .location-screen {
@@ -659,12 +1316,12 @@ a {
 }
 
 @media (max-width: 900px) {
-  .second-screen::before {
-    transform: scale(1.45);
-  }
-
   .second-screen-content {
     transform: translateY(2vh);
+  }
+
+  .artist-info {
+    transform: none;
   }
 }
 

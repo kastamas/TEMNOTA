@@ -25,10 +25,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260511-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260520-1" />
     <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/src/flipdown.min.js" defer></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
-    <script src="./script.js?v=20260511-1" defer></script>
+    <script src="./script.js?v=20260520-1" defer></script>
   </head>
   <body>
     <div class="noise"></div>
@@ -129,18 +129,144 @@
         </div>
       </div>
     </section> -->
-    <section class="second-screen" aria-label="SIXXXSEVEN">
-      <div class="second-screen-content">
-        <p class="second-screen-kicker">[MAIN STAGE]</p>
-        <h2 class="second-screen-title">SIXXXSEVEN</h2>
-        <p class="second-screen-description">
-          Резидент команды
-          <a class="second-screen-link" href="https://t.me/kontrkult21" target="_blank" rel="noreferrer">KONTRKULT</a>
-          и основатель промо-группы
-          <a class="second-screen-link" href="https://t.me/bunker555040" target="_blank" rel="noreferrer">BUNKER</a>,
-          специализирующейся на андеграундных рейвах и выставках современного искусства
-        </p>
-        <a class="second-screen-action" href="#interview" aria-expanded="false" aria-controls="interview">Читать интервью</a>
+    <section id="artists" class="second-screen" aria-label="Артисты MAIN STAGE">
+      <div class="artist-slider" data-slider>
+        <div class="artist-stage-switch" aria-label="Быстрый выбор сцены">
+          <button class="artist-stage-button is-active" type="button" aria-pressed="true" data-stage-jump="main">MAIN STAGE</button>
+          <button class="artist-stage-button" type="button" aria-pressed="false" data-stage-jump="second">SECOND STAGE</button>
+        </div>
+        <article class="artist-slide artist-slide-sixxxseven second-slide is-active" aria-label="SIXXXSEVEN" data-stage="main">
+          <div class="artist-photo-card artist-photo-card-sixxxseven" role="img" aria-label="SIXXXSEVEN за пультом"></div>
+          <div class="second-screen-content artist-info artist-info-sixxxseven">
+            <p class="second-screen-kicker">[MAIN STAGE]</p>
+            <h2 class="second-screen-title">SIXXXSEVEN</h2>
+            <p class="second-screen-description">
+              Резидент команды
+              <a class="second-screen-link" href="https://t.me/kontrkult21" target="_blank" rel="noreferrer">KONTRKULT</a>
+              и основатель промо-группы
+              <a class="second-screen-link" href="https://t.me/bunker555040" target="_blank" rel="noreferrer">BUNKER</a>,
+              специализирующейся на андеграундных рейвах и выставках современного искусства
+            </p>
+            <a class="second-screen-action second-screen-interview-action" href="#interview" aria-expanded="false" aria-controls="interview">Читать интервью</a>
+          </div>
+        </article>
+        <article class="artist-slide artist-slide-misha second-slide" aria-label="MISHA SIDEX" data-stage="main">
+          <div class="artist-photo-card artist-photo-card-misha" role="img" aria-label="MISHA SIDEX за пультом"></div>
+          <div class="second-screen-content artist-info">
+            <p class="second-screen-kicker">[MAIN STAGE]</p>
+            <h2 class="second-screen-title">MISHA SIDEX</h2>
+            <p class="second-screen-description">
+              Диджей и саунд-продюсер из Петрозаводска
+
+              Организатор техно-вечеринок <a class="second-screen-link" href="https://www.instagram.com/tmntptz/" target="_blank" rel="noreferrer">TEMNOTA</a>, резидент школы диджеинга <a class="second-screen-link" href="https://www.instagram.com/dj.factory/" target="_blank" rel="noreferrer">DJ.FACTORY</a>
+            </p>
+          </div>
+        </article>
+        <article class="artist-slide artist-slide-running-bunny second-slide" aria-label="RUNN!NG BUNNY" data-stage="main">
+          <div class="artist-photo-card artist-photo-card-running-bunny" role="img" aria-label="RUNN!NG BUNNY за пультом"></div>
+          <div class="second-screen-content artist-info">
+            <p class="second-screen-kicker">[MAIN STAGE]</p>
+            <h2 class="second-screen-title">RUNN!NG BUNNY</h2>
+            <p class="second-screen-description">
+              Продюсер и диджей из Петрозаводска. <br/> «Мой выбор это Хард техно, потому что этот жанр выплёскивает столько же энергии, сколько во мне появилось с самого рождения (Чем жёстче тем лучше) 😈»
+            </p>
+          </div>
+        </article>
+        <article class="artist-slide artist-slide-wicthor second-slide" aria-label="WICTHØR" data-stage="main">
+          <div class="artist-photo-card artist-photo-card-wicthor" role="img" aria-label="WICTHØR за пультом"></div>
+          <div class="second-screen-content artist-info">
+            <p class="second-screen-kicker">[MAIN STAGE]</p>
+            <h2 class="second-screen-title">WICTHØR</h2>
+            <p class="second-screen-description">
+              Организатор
+              <a class="second-screen-link" href="https://www.instagram.com/m4n4l4" target="_blank" rel="noreferrer">MΔNΔLΔ</a><br/>
+              «Гибрид техно с витчхаусом мало кто слышал, даже я. Это будет экспериментальный звук с непредсказуемым
+              результатом»
+            </p>
+          </div>
+        </article>
+        <article class="artist-slide artist-slide-kirille second-slide" aria-label="KIRILLE" data-stage="main">
+          <div class="artist-photo-card artist-photo-card-kirille" role="img" aria-label="KIRILLE за пультом"></div>
+          <div class="second-screen-content artist-info">
+            <p class="second-screen-kicker">[MAIN STAGE]</p>
+            <h2 class="second-screen-title">KIRILLE</h2>
+            <p class="second-screen-description">
+              «Я ходил в техно-клубы Берлина, Белграда, Тбилиси и Москвы. Слушал, чувствовал, растворялся в темноте.
+              Теперь хочется поделиться своей селекцией»
+            </p>
+          </div>
+        </article>
+        <article class="artist-slide artist-slide-magica second-slide" aria-label="MAGICA" data-stage="second">
+          <div class="artist-photo-card artist-photo-card-magica" role="img" aria-label="MAGICA за пультом"></div>
+          <div class="second-screen-content artist-info">
+            <p class="second-screen-kicker">[SECOND STAGE]</p>
+            <h2 class="second-screen-title">MAGICA</h2>
+            <p class="second-screen-description">
+              Проводница в мир мелодичного ритма, которая с недавних пор успешно осваивает ломаные ритмы. Магическим образом её энергия притягивает слушателей и объединяет людей на танцполе. Вдохновительница и сооснователь Творческого Объединения
+              <a class="second-screen-link" href="https://t.me/progressptz" target="_blank" rel="noreferrer">«Прогресс»</a>
+            </p>
+          </div>
+        </article>
+        <article class="artist-slide artist-slide-shelonya second-slide" aria-label="ШЕЛОНЯ" data-stage="second">
+          <div class="artist-photo-card artist-photo-card-shelonya" role="img" aria-label="ШЕЛОНЯ за пультом"></div>
+          <div class="second-screen-content artist-info">
+            <p class="second-screen-kicker">[SECOND STAGE]</p>
+            <h2 class="second-screen-title">ШЕЛОНЯ</h2>
+            <p class="second-screen-description">
+              «Всем привет, меня зовут Соня и я люблю разную музыку. Слушать, играть, писать. Пишу меланхолию о жизни,
+              играю ломаные ритмы с капелькой веселья. В общем, музыка в наушниках меняется также быстро, как и моё
+              настроение»
+            </p>
+          </div>
+        </article>
+        <article class="artist-slide artist-slide-lilakovaya second-slide" aria-label="LILAKOVAYA" data-stage="second">
+          <div class="artist-photo-card artist-photo-card-lilakovaya" role="img" aria-label="LILAKOVAYA за пультом"></div>
+          <div class="second-screen-content artist-info">
+            <p class="second-screen-kicker">[SECOND STAGE]</p>
+            <h2 class="second-screen-title">LILAKOVAYA</h2>
+            <p class="second-screen-description">
+              «Днем — сладкие песни, ночью — ломанные ритмы. Люблю контрасты, это всегда про меня, сама пишу песни в
+              вайбах томного р'н'б, а в диджей-сетах меня привлекают техно, брейкбит, гипнотический грув и этнические
+              мотивы с тёмной ночной энергией»
+            </p>
+          </div>
+        </article>
+        <article class="artist-slide artist-slide-darya-duryevna second-slide" aria-label="DARYA DURYEVNA" data-stage="second">
+          <div class="artist-photo-card artist-photo-card-darya-duryevna" role="img" aria-label="DARYA DURYEVNA за пультом"></div>
+          <div class="second-screen-content artist-info">
+            <p class="second-screen-kicker">[SECOND STAGE]</p>
+            <h2 class="second-screen-title">DARYA DURYEVNA</h2>
+            <p class="second-screen-description">
+              «ДД истинный ценитель Lo-fi. <br/>О себе: квинтэссенция стиля. <br/>Мотто: моя музыка не для всех, моя музыка для
+              тебя!»
+            </p>
+          </div>
+        </article>
+        <article class="artist-slide artist-slide-linda second-slide" aria-label="LINDA" data-stage="second">
+          <div class="artist-photo-card artist-photo-card-linda" role="img" aria-label="LINDA"></div>
+          <div class="second-screen-content artist-info">
+            <p class="second-screen-kicker">[SECOND STAGE]</p>
+            <h2 class="second-screen-title">LINDA</h2>
+          </div>
+        </article>
+        <button class="slider-button slider-button-prev" type="button" aria-label="Предыдущий артист" data-slider-prev>
+          ‹
+        </button>
+        <button class="slider-button slider-button-next" type="button" aria-label="Следующий артист" data-slider-next>
+          ›
+        </button>
+        <div class="slider-dots" aria-label="Артисты MAIN STAGE">
+          <button class="slider-dot is-active" type="button" aria-label="SIXXXSEVEN" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="MISHA SIDEX" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="RUNN!NG BUNNY" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="WICTHØR" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="KIRILLE" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="MAGICA" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="ШЕЛОНЯ" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="LILAKOVAYA" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="DARYA DURYEVNA" data-slider-dot></button>
+          <button class="slider-dot" type="button" aria-label="LINDA" data-slider-dot></button>
+        </div>
       </div>
     </section>
     <section id="interview" class="interview-screen" aria-label="Интервью с SIXXXSEVEN" hidden>

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const interviewSection = document.getElementById("interview");
-  const interviewOpenButton = document.querySelector(".second-screen-action");
+  const interviewOpenButton = document.querySelector(".second-screen-interview-action");
   const interviewHideButton = document.querySelector(".interview-hide");
 
   const showInterview = () => {
@@ -190,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const slides = [...slider.querySelectorAll(".second-slide")];
   const dots = [...slider.querySelectorAll("[data-slider-dot]")];
+  const stageButtons = [...slider.querySelectorAll("[data-stage-jump]")];
   const prevButton = slider.querySelector("[data-slider-prev]");
   const nextButton = slider.querySelector("[data-slider-next]");
   let activeIndex = 0;
@@ -205,6 +206,13 @@ document.addEventListener("DOMContentLoaded", () => {
     dots.forEach((dot, dotIndex) => {
       dot.classList.toggle("is-active", dotIndex === activeIndex);
     });
+
+    stageButtons.forEach((button) => {
+      const isActiveStage = button.dataset.stageJump === slides[activeIndex]?.dataset.stage;
+
+      button.classList.toggle("is-active", isActiveStage);
+      button.setAttribute("aria-pressed", String(isActiveStage));
+    });
   };
 
   prevButton?.addEventListener("click", () => showSlide(activeIndex - 1));
@@ -212,6 +220,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   dots.forEach((dot, dotIndex) => {
     dot.addEventListener("click", () => showSlide(dotIndex));
+  });
+
+  stageButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetStage = button.dataset.stageJump;
+      const targetIndex = slides.findIndex((slide) => slide.dataset.stage === targetStage);
+
+      if (targetIndex >= 0) {
+        showSlide(targetIndex);
+      }
+    });
   });
 
   slider.addEventListener(

@@ -1080,6 +1080,27 @@ a {
 }
 
 @media (max-width: 900px) {
+  .second-screen,
+  .artist-slider {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .artist-slide {
+    position: relative;
+    inset: auto;
+    display: none;
+    min-height: auto;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    pointer-events: auto;
+  }
+
+  .artist-slide.is-active {
+    display: grid;
+  }
+
   .artist-slide-sixxxseven,
   .artist-slide-magica,
   .artist-slide-misha,

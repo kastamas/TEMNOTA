@@ -9,6 +9,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }).start();
   }
 
+  const eventCountdown = document.querySelector("[data-countdown-date]");
+
+  if (eventCountdown) {
+    const eventDate = new Date(eventCountdown.dataset.countdownDate);
+    const days = eventCountdown.querySelector("[data-countdown-days]");
+    const hours = eventCountdown.querySelector("[data-countdown-hours]");
+    const minutes = eventCountdown.querySelector("[data-countdown-minutes]");
+    const seconds = eventCountdown.querySelector("[data-countdown-seconds]");
+    const daysLabel = eventCountdown.querySelector("[data-countdown-days-label]");
+    const hoursLabel = eventCountdown.querySelector("[data-countdown-hours-label]");
+    const minutesLabel = eventCountdown.querySelector("[data-countdown-minutes-label]");
+    const secondsLabel = eventCountdown.querySelector("[data-countdown-seconds-label]");
+
+    const pluralize = (value, one, few, many) => {
+      const modulo10 = value % 10;
+      const modulo100 = value % 100;
+
+      if (modulo10 === 1 && modulo100 !== 11) return one;
+      if (modulo10 >= 2 && modulo10 <= 4 && (modulo100 < 12 || modulo100 > 14)) return few;
+      return many;
+    };
+
+    const updateEventCountdown = () => {
+      const remaining = Math.max(0, eventDate.getTime() - Date.now());
+      const totalSeconds = Math.floor(remaining / 1000);
+      const values = {
+        days: Math.floor(totalSeconds / 86400),
+        hours: Math.floor((totalSeconds % 86400) / 3600),
+        minutes: Math.floor((totalSeconds % 3600) / 60),
+        seconds: totalSeconds % 60,
+      };
+
+      days.textContent = String(values.days).padStart(2, "0");
+      hours.textContent = String(values.hours).padStart(2, "0");
+      minutes.textContent = String(values.minutes).padStart(2, "0");
+      seconds.textContent = String(values.seconds).padStart(2, "0");
+      daysLabel.textContent = pluralize(values.days, "день", "дня", "дней");
+      hoursLabel.textContent = pluralize(values.hours, "час", "часа", "часов");
+      minutesLabel.textContent = pluralize(values.minutes, "минута", "минуты", "минут");
+      secondsLabel.textContent = pluralize(values.seconds, "секунда", "секунды", "секунд");
+    };
+
+    updateEventCountdown();
+    window.setInterval(updateEventCountdown, 1000);
+  }
+
   const interviewSection = document.getElementById("interview");
   const interviewOpenButton = document.querySelector(".second-screen-interview-action");
   const interviewHideButton = document.querySelector(".interview-hide");
@@ -82,14 +128,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const photoModalClose = document.querySelector(".photo-modal-close");
   const photoModalPrev = document.querySelector(".photo-modal-prev");
   const photoModalNext = document.querySelector(".photo-modal-next");
-  const galleryItems = [...document.querySelectorAll(".location-gallery-item")];
-  const galleryPhotos = galleryItems
-    .map((item) => item.querySelector("img"))
-    .filter(Boolean);
+  const galleryGroups = [
+    [...document.querySelectorAll("#temnota-ii-photo-list button.temnota-ii-photo")],
+    [...document.querySelectorAll(".location-gallery-item")],
+    [...document.querySelectorAll(".past-event-photo")],
+  ].filter((group) => group.length > 0);
+  let activePhotoGroup = [];
   let activePhotoIndex = 0;
   let photoTouchStartX = 0;
 
+  const getVisibleGalleryPhotos = (group) =>
+    group
+      .filter((item) => item.offsetParent !== null)
+      .map((item) => item.querySelector("img"))
+      .filter(Boolean);
+
   const showPhoto = (index) => {
+    const galleryPhotos = getVisibleGalleryPhotos(activePhotoGroup);
+
     if (!photoModalImage || galleryPhotos.length === 0) {
       return;
     }
@@ -117,17 +173,28 @@ document.addEventListener("DOMContentLoaded", () => {
     showPhoto(activePhotoIndex + step);
   };
 
-  galleryItems.forEach((item, itemIndex) => {
-    item.addEventListener("click", () => {
-      if (!photoModal || !photoModalImage) {
-        return;
-      }
+  galleryGroups.forEach((group) => {
+    group.forEach((item) => {
+      item.addEventListener("click", () => {
+        if (!photoModal || !photoModalImage) {
+          return;
+        }
 
-      showPhoto(itemIndex);
-      photoModal.classList.add("is-open");
-      photoModal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("is-modal-open");
-      photoModal.focus();
+        const image = item.querySelector("img");
+        const visiblePhotos = getVisibleGalleryPhotos(group);
+        const visibleIndex = visiblePhotos.indexOf(image);
+
+        if (visibleIndex < 0) {
+          return;
+        }
+
+        activePhotoGroup = group;
+        showPhoto(visibleIndex);
+        photoModal.classList.add("is-open");
+        photoModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("is-modal-open");
+        photoModal.focus();
+      });
     });
   });
 

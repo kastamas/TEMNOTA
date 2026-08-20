@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <base href="../../" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Фоторепортаж с TEMNOTA I: BOHEMIUM — 8 ноября 2025 года, клуб «Прогресс»."
+    />
+    <title>TEMNOTA I: BOHEMIUM — архив</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="./temnota-i-bohemium-cover-v2.webp" />
+    <link rel="stylesheet" href="./styles.css?v=20260821-32" />
+    <script src="./script.js?v=20260617-5" defer></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-header-logo" href="./" aria-label="TMNT — на главную">
+          <img src="./tmnt-logo.svg" alt="TMNT" />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="temnota-i-photos"
+        class="temnota-ii-screen"
+        aria-labelledby="temnota-i-title"
+      >
+        <div class="temnota-ii-gallery">
+          <div class="temnota-ii-photo temnota-ii-photo-featured">
+            <img
+              src="./temnota-i-bohemium-cover-v2.webp"
+              alt="TEMNOTA I: BOHEMIUM в клубе «Прогресс»"
+              fetchpriority="high"
+            />
+            <div class="temnota-ii-heading">
+              <span id="temnota-i-title" class="temnota-ii-title temnota-i-title">TEMNOTA I: BOHEMIUM</span>
+              <span class="temnota-ii-credit">
+                Photo Report by
+                <a href="https://www.instagram.com/confusingyourmind/" target="_blank" rel="noopener noreferrer">Stasya</a>
+              </span>
+              <span class="temnota-ii-kicker">08.11.2025</span>
+            </div>
+          </div>
+
+          <div id="temnota-ii-photo-list" class="temnota-ii-photo-list" aria-label="Фотографии TEMNOTA I">
+            <button class="temnota-ii-photo" type="button" aria-label="Открыть фотографию 1">
+              <img src="./temnota-i-photo-01.webp" alt="TEMNOTA I: фотография 1" loading="lazy" />
+            </button>
+            <button class="temnota-ii-photo" type="button" aria-label="Открыть фотографию 2">
+              <img src="./temnota-i-photo-02.webp" alt="TEMNOTA I: фотография 2" loading="lazy" />
+            </button>
+            <button class="temnota-ii-photo" type="button" aria-label="Открыть фотографию 3">
+              <img src="./temnota-i-photo-03.webp" alt="TEMNOTA I: фотография 3" loading="lazy" />
+            </button>
+            <button class="temnota-ii-photo" type="button" aria-label="Открыть фотографию 4">
+              <img src="./temnota-i-photo-04.webp" alt="TEMNOTA I: фотография 4" loading="lazy" />
+            </button>
+            <button class="temnota-ii-photo" type="button" aria-label="Открыть фотографию 5">
+              <img src="./temnota-i-photo-05.webp" alt="TEMNOTA I: фотография 5" loading="lazy" />
+            </button>
+            <button class="temnota-ii-photo" type="button" aria-label="Открыть фотографию 6">
+              <img src="./temnota-i-photo-06.webp" alt="TEMNOTA I: фотография 6" loading="lazy" />
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="photo-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+      <button class="photo-modal-close" type="button" aria-label="Закрыть фотографию">×</button>
+      <button class="photo-modal-nav photo-modal-prev" type="button" aria-label="Предыдущая фотография">←</button>
+      <img class="photo-modal-image" src="" alt="" />
+      <button class="photo-modal-nav photo-modal-next" type="button" aria-label="Следующая фотография">→</button>
+      <span class="photo-modal-counter" aria-live="polite"></span>
+    </div>
+  </body>
+</html>

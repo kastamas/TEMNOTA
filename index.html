@@ -3,344 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TEMNOTA II: SIXXXSEVEN</title>
+    <title>DRAM + NUWEI</title>
     <meta
       name="description"
-      content="TEMNOTA II: SIXXXSEVEN — техно-рейв в Петрозаводске. 6 июня, 23:00. Две сцены, одна ночь и бесконечная TEMNOTA."
+      content="12 сентября, 23:00. Литейная, 1 / клуб «Рядом»."
     />
-    <meta property="og:title" content="TEMNOTA II: SIXXXSEVEN" />
+    <link rel="canonical" href="https://tmntptz.ru/" />
+    <meta property="og:title" content="DRAM + NUWEI" />
     <meta
       property="og:description"
-      content="6 июня, 23:00. Литейная, 1 / клуб «Рядом». Две сцены, одна ночь и бесконечная TEMNOTA."
+      content="12 сентября, 23:00. Литейная, 1 / клуб «Рядом»."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./poster.png" />
+    <meta property="og:url" content="https://tmntptz.ru/" />
+    <meta property="og:image" content="https://tmntptz.ru/dram-nuwei-social.jpg" />
+    <meta property="og:image:secure_url" content="https://tmntptz.ru/dram-nuwei-social.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="DRAM x NUWEI — 12 сентября в клубе «Рядом»" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DRAM + NUWEI" />
+    <meta name="twitter:description" content="12 сентября, 23:00. Литейная, 1 / клуб «Рядом»." />
+    <meta name="twitter:image" content="https://tmntptz.ru/dram-nuwei-social.jpg" />
     <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&family=Rubik:ital,wght@1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260520-1" />
-    <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/src/flipdown.min.js" defer></script>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
-    <script src="./script.js?v=20260520-1" defer></script>
+    <link rel="preload" as="image" href="./dram-nuwei-poster-v2.webp" />
+    <link rel="stylesheet" href="./styles.css?v=20260821-32" />
+    <script src="./script.js?v=20260821-8" defer></script>
   </head>
-  <body>
+  <body class="past-events-page">
     <div class="noise"></div>
     <div class="scanlines"></div>
 
-    <section class="intro-screen" aria-label="TMNT">
-      <svg class="intro-logo" role="img" aria-label="TMNT" viewBox="0 0 919 275" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <clipPath id="tmnt-logo-clip">
-            <path d="M295.088 0L370.915 184.765H374.141L449.969 0H521.834L640.685 172.948H643.104V0H919V47.9367H834.702V275H777.16V47.9367H701.05V275H650.767L530.976 101.917H528.96V275H465.297V96.0085H463.011L391.755 273.658H353.304L282.046 95.3376H279.762V275H223.293V47.9367H141.84V275H84.2976V47.9367H0V0H295.088Z" />
-          </clipPath>
-        </defs>
-        <g clip-path="url(#tmnt-logo-clip)">
-          <g class="intro-logo-texture">
-            <image href="./logo-texture.webp" x="-220" y="-250" width="1500" height="1000" preserveAspectRatio="xMidYMid slice" />
-            <image href="./logo-texture.webp" x="1120" y="-250" width="1500" height="1000" preserveAspectRatio="xMidYMid slice" />
-          </g>
-        </g>
-      </svg>
-      <div class="intro-countdown" aria-label="Таймер до события">
-        <span class="intro-countdown-label">
-          <span>6.06 TEMNOTA II: SIXXXSEVEN</span>
-          <span>Петрозаводск: Рядом, Литейная, 1</span>
-        </span>
-        <div id="flipdown" class="flipdown"></div>
-        <p class="social-line">
-          <span>FOLLOW US:</span>
-          <a class="telegram-link" href="https://t.me/tmntptz" target="_blank" rel="noreferrer">telegram</a>
-          <span>/</span>
-          <a class="telegram-link" href="https://www.instagram.com/tmntptz" target="_blank" rel="noreferrer">instagram*</a>
-        </p>
-        <p class="meta-disclaimer">*Компания Meta запрещена в России</p>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-header-logo" href="./" aria-label="TMNT — главная">
+          <img src="./tmnt-logo.svg" alt="TMNT" />
+        </a>
       </div>
-      <div class="intro-ticket-widget" aria-label="Покупка билетов">
+    </header>
+
+    <section class="top-event-poster" aria-label="DRAM: NUWEI — 12 сентября, клуб «Рядом»">
+      <img
+        src="./dram-nuwei-poster-v2.webp"
+        alt="DRAM: NUWEI — 12 сентября в клубе «Рядом»"
+        fetchpriority="high"
+      />
+      <div class="event-countdown" data-countdown-date="2026-09-12T23:00:00+03:00" aria-label="До события осталось">
+        <span class="event-countdown-kicker">ДО НАЧАЛА</span>
+        <div class="event-countdown-grid">
+          <span class="event-countdown-unit">
+            <strong data-countdown-days>00</strong>
+            <small data-countdown-days-label>дней</small>
+          </span>
+          <span class="event-countdown-unit">
+            <strong data-countdown-hours>00</strong>
+            <small data-countdown-hours-label>часов</small>
+          </span>
+          <span class="event-countdown-unit">
+            <strong data-countdown-minutes>00</strong>
+            <small data-countdown-minutes-label>минут</small>
+          </span>
+          <span class="event-countdown-unit">
+            <strong data-countdown-seconds>00</strong>
+            <small data-countdown-seconds-label>секунд</small>
+          </span>
+        </div>
+      </div>
+      <div class="top-event-ticket">
         <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
         <script>
-          if (window.radario?.Widgets?.Event) {
-            radario.Widgets.Event({
-              params: {
-                accentColor: "rgba(0, 0, 0, 1)",
-                textBtnColor: "#FFFFFF",
-                isSkipTicketSelectStep: false,
-              },
-              buttonText: "БИЛЕТЫ",
-              standalone: false,
-              createButton: true,
-              eventId: 2670441,
-            });
-          }
+          radario.Widgets.Event({
+            params: {
+              accentColor: "rgba(210, 2, 2, 1)",
+              textBtnColor: "#FFFFFF",
+            },
+            standalone: false,
+            createButton: true,
+            eventId: 2832121,
+          });
         </script>
       </div>
-      <!-- <div class="headline-marquee" aria-hidden="true">
-        <div class="headline-marquee-track">
-          <span>ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР</span>
-          <span>ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР ХЕДЛАЙНЕР</span>
-        </div>
-      </div> -->
     </section>
-    <!-- <section class="second-screen" aria-label="TEMNOTA">
-      <div class="second-slider" data-slider>
-        <div class="second-slide is-active">
-          <div class="second-content">
-            <h2 class="second-title">TEMNOTA I</h2>
-            <p class="second-description">
-              Это серия техно-вечеринок с приглашенными артистами и специально созданными декорациями
-            </p>
-          </div>
+
+    <section id="temnota-ii-photos" class="temnota-ii-screen" aria-label="Фотографии TEMNOTA II">
+      <h2 class="past-events-section-title">ПРОШЛЫЕ СОБЫТИЯ</h2>
+      <div class="temnota-ii-gallery" aria-label="Галерея фотографий TEMNOTA II">
+        <div class="temnota-ii-photo temnota-ii-photo-featured">
+          <img src="./temnota-ii-photo-01.webp" alt="Диджей за пультом на TEMNOTA II" loading="eager" decoding="async" />
+          <a class="past-events-banner-link past-events-photo-link" href="./archive/temnota-2/">
+            <span class="past-events-banner-index">[ 02 ]</span>
+            <span class="past-events-banner-event">
+              <strong>TEMNOTA II: SIXXXSEVEN</strong>
+              <small>06.06.2026 · КЛУБ «РЯДОМ»</small>
+            </span>
+            <span class="past-events-banner-action">
+              СМОТРЕТЬ
+              <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M6.4 18 5 16.6 14.6 7H6V5h12v12h-2V8.4z" />
+              </svg>
+            </span>
+          </a>
         </div>
-        <div class="second-slide second-slide-bohemium">
-          <div class="second-content">
-            <h2 class="second-title">ХЕДЛАЙНЕР</h2>
-            <p class="second-description">
-              Хедлайнером первой вечеринки стал артист
-              <a class="second-link" href="https://soundcloud.com/iamti93" target="_blank" rel="noreferrer">Bohemium</a>,
-              заложивший хардгрув-гипнотик звучание в её фундамент
-            </p>
-          </div>
+        <div class="temnota-ii-photo temnota-ii-photo-featured past-event-card past-event-card-temnota-i">
+          <img src="./temnota-i-bohemium-cover-v2.webp" alt="TEMNOTA I: BOHEMIUM" loading="eager" decoding="async" />
+          <a class="past-events-banner-link past-events-photo-link" href="./archive/temnota-1/">
+            <span class="past-events-banner-index">[ 01 ]</span>
+            <span class="past-events-banner-event">
+              <strong>TEMNOTA I: BOHEMIUM</strong>
+              <small>08.11.2025 · КЛУБ «ПРОГРЕСС»</small>
+            </span>
+            <span class="past-events-banner-action">
+              СМОТРЕТЬ
+              <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M6.4 18 5 16.6 14.6 7H6V5h12v12h-2V8.4z" />
+              </svg>
+            </span>
+          </a>
         </div>
-        <div class="second-slide second-slide-decorations">
-          <div class="second-content">
-            <h2 class="second-title">ДЕКОРАЦИИ</h2>
-            <p class="second-description">
-              Декоратором выступила художница Юлия Крисанова, придумавшая и реализовавшая концептуальное оформление
-              для вечеринки
-            </p>
-          </div>
-        </div>
-        <button class="slider-button slider-button-prev" type="button" aria-label="Предыдущий слайд" data-slider-prev>
-          ‹
-        </button>
-        <button class="slider-button slider-button-next" type="button" aria-label="Следующий слайд" data-slider-next>
-          ›
-        </button>
-        <div class="slider-dots" aria-label="Слайды">
-          <button class="slider-dot is-active" type="button" aria-label="Слайд 1" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="Слайд 2" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="Слайд 3" data-slider-dot></button>
-        </div>
-      </div>
-    </section> -->
-    <section id="artists" class="second-screen" aria-label="Артисты MAIN STAGE">
-      <div class="artist-slider" data-slider>
-        <div class="artist-stage-switch" aria-label="Быстрый выбор сцены">
-          <button class="artist-stage-button is-active" type="button" aria-pressed="true" data-stage-jump="main">MAIN STAGE</button>
-          <button class="artist-stage-button" type="button" aria-pressed="false" data-stage-jump="second">SECOND STAGE</button>
-        </div>
-        <article class="artist-slide artist-slide-sixxxseven second-slide is-active" aria-label="SIXXXSEVEN" data-stage="main">
-          <div class="artist-photo-card artist-photo-card-sixxxseven" role="img" aria-label="SIXXXSEVEN за пультом"></div>
-          <div class="second-screen-content artist-info artist-info-sixxxseven">
-            <p class="second-screen-kicker">[MAIN STAGE]</p>
-            <h2 class="second-screen-title">SIXXXSEVEN</h2>
-            <p class="second-screen-description">
-              Резидент команды
-              <a class="second-screen-link" href="https://t.me/kontrkult21" target="_blank" rel="noreferrer">KONTRKULT</a>
-              и основатель промо-группы
-              <a class="second-screen-link" href="https://t.me/bunker555040" target="_blank" rel="noreferrer">BUNKER</a>,
-              специализирующейся на андеграундных рейвах и выставках современного искусства.
-            </p>
-            <a class="second-screen-action second-screen-interview-action" href="#interview" aria-expanded="false" aria-controls="interview">Читать интервью</a>
-          </div>
-        </article>
-        <article class="artist-slide artist-slide-misha second-slide" aria-label="MISHA SIDEX" data-stage="main">
-          <div class="artist-photo-card artist-photo-card-misha" role="img" aria-label="MISHA SIDEX за пультом"></div>
-          <div class="second-screen-content artist-info">
-            <p class="second-screen-kicker">[MAIN STAGE]</p>
-            <h2 class="second-screen-title">MISHA SIDEX</h2>
-            <p class="second-screen-description">              
-              Организатор техно-вечеринок <a class="second-screen-link" href="https://t.me/tmntptz" target="_blank" rel="noreferrer">TEMNOTA</a> и резидент школы диджеинга <a class="second-screen-link" href="https://www.instagram.com/dj.factory/" target="_blank" rel="noreferrer">DJ.FACTORY</a>, тяготеющий к андеграундному звучанию и эксперементальным форматам.
-            </p>
-          </div>
-        </article>
-        <article class="artist-slide artist-slide-running-bunny second-slide" aria-label="RUNN!NG BUNNY" data-stage="main">
-          <div class="artist-photo-card artist-photo-card-running-bunny" role="img" aria-label="RUNN!NG BUNNY за пультом"></div>
-          <div class="second-screen-content artist-info">
-            <p class="second-screen-kicker">[MAIN STAGE]</p>
-            <h2 class="second-screen-title">RUNN!NG BUNNY</h2>
-            <p class="second-screen-description">
-              Диджей и продюсер из Петрозаводска, чьи треки набрали более миллиона прослушиваний на стримингах. Его выбор — хард-техно, жанр, который выплёскивает столько же энергии, сколько и он сам. 
-            </p>
-          </div>
-        </article>
-        <article class="artist-slide artist-slide-wicthor second-slide" aria-label="WICTHØR" data-stage="main">
-          <div class="artist-photo-card artist-photo-card-wicthor" role="img" aria-label="WICTHØR за пультом"></div>
-          <div class="second-screen-content artist-info">
-            <p class="second-screen-kicker">[MAIN STAGE]</p>
-            <h2 class="second-screen-title">WICTHØR</h2>
-            <p class="second-screen-description">
-              Организатор витчхаус-вечеринок <a class="second-screen-link" href="https://t.me/M4N4L4" target="_blank" rel="noreferrer">MΔNΔLΔ</a>. Транслирует скопленный годами материал из самых тёмных уголков музыкального мира. Его звучание — это смесь техно и витчхауса, где экспериментальный звук приводит к непредсказуемому результату. 
-            </p>
-          </div>
-        </article>
-        <article class="artist-slide artist-slide-kirille second-slide" aria-label="KIRILLE" data-stage="main">
-          <div class="artist-photo-card artist-photo-card-kirille" role="img" aria-label="KIRILLE за пультом"></div>
-          <div class="second-screen-content artist-info">
-            <p class="second-screen-kicker">[MAIN STAGE]</p>
-            <h2 class="second-screen-title">KIRILLE</h2>
-            <p class="second-screen-description">
-              Начинающий диджей, почерпнувший вдохновение в техно-клубах Берлина, Белграда, Тбилиси и Москвы. Он слушал, чувствовал и растворялся в темноте — теперь пришло время делиться своей селекцией. 
-            </p>
-          </div>
-        </article>
-        <article class="artist-slide artist-slide-magica second-slide" aria-label="MAGICA" data-stage="second">
-          <div class="artist-photo-card artist-photo-card-magica" role="img" aria-label="MAGICA за пультом"></div>
-          <div class="second-screen-content artist-info">
-            <p class="second-screen-kicker">[SECOND STAGE]</p>
-            <h2 class="second-screen-title">MAGICA</h2>
-            <p class="second-screen-description">
-              Вдохновительница и соосновательница Творческого объединения <a class="second-screen-link" href="https://t.me/progressptz" target="_blank" rel="noreferrer">«Прогресс»</a>. Проводница в мир мелодичных и ломаных ритмов, которая магическим образом притягивает слушателей и объединяет людей на танцполе. 
-            </p>
-          </div>
-        </article>
-        <article class="artist-slide artist-slide-shelonya second-slide" aria-label="ШЕЛОНЯ" data-stage="second">
-          <div class="artist-photo-card artist-photo-card-shelonya" role="img" aria-label="ШЕЛОНЯ за пультом"></div>
-          <div class="second-screen-content artist-info">
-            <p class="second-screen-kicker">[SECOND STAGE]</p>
-            <h2 class="second-screen-title">ШЕЛОНЯ</h2>
-            <p class="second-screen-description">
-              Исполнительница, которая любит музыку во всех проявлениях: она играет ломаные ритмы с ноткой веселья, пишет меланхоличные истории о жизни, а музыка в её наушниках меняется также быстро, как и настроение. 
-            </p>
-          </div>
-        </article>
-        <article class="artist-slide artist-slide-lilakovaya second-slide" aria-label="LILAKOVAYA" data-stage="second">
-          <div class="artist-photo-card artist-photo-card-lilakovaya" role="img" aria-label="LILAKOVAYA за пультом"></div>
-          <div class="second-screen-content artist-info">
-            <p class="second-screen-kicker">[SECOND STAGE]</p>
-            <h2 class="second-screen-title">LILAKOVAYA</h2>
-            <p class="second-screen-description">
-              Исполнительница, для которой контраст — второе имя. Она пишет песни в вайбе томного R&B, а в своих диджей-сетах сочетает техно, брейкбит, гипнотический грув и этнические мотивы с тёмной ночной энергией. 
-            </p>
-          </div>
-        </article>
-        <article class="artist-slide artist-slide-darya-duryevna second-slide" aria-label="DARYA DURYEVNA" data-stage="second">
-          <div class="artist-photo-card artist-photo-card-darya-duryevna" role="img" aria-label="DARYA DURYEVNA за пультом"></div>
-          <div class="second-screen-content artist-info">
-            <p class="second-screen-kicker">[SECOND STAGE]</p>
-            <h2 class="second-screen-title">DARYA DURYEVNA</h2>
-            <p class="second-screen-description">
-              Истинная ценительница Lo-Fi, превращающая свои сеты в чистую квинтэссенцию жанра. Её музыка не для всех — она для тех, кто чувствует.
-            </p>
-          </div>
-        </article>
-        <article class="artist-slide artist-slide-linda second-slide" aria-label="LINDA" data-stage="second">
-          <div class="artist-photo-card artist-photo-card-linda" role="img" aria-label="LINDA"></div>
-          <div class="second-screen-content artist-info">
-            <p class="second-screen-kicker">[SECOND STAGE]</p>
-            <h2 class="second-screen-title">LINDA</h2>
-            <p class="second-screen-description">
-              Резидентка клуба <a class="second-screen-link" href="https://t.me/clubryadom" target="_blank" rel="noreferrer">«Рядом»</a>, отдаёт предпочтение жанру IDM и ломаным ритмам. Её музыка создаёт пространство, где можно быть собой.
-            </p>
-          </div>
-        </article>
-        <button class="slider-button slider-button-prev" type="button" aria-label="Предыдущий артист" data-slider-prev>
-          ‹
-        </button>
-        <button class="slider-button slider-button-next" type="button" aria-label="Следующий артист" data-slider-next>
-          ›
-        </button>
-        <div class="slider-dots" aria-label="Артисты MAIN STAGE">
-          <button class="slider-dot is-active" type="button" aria-label="SIXXXSEVEN" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="MISHA SIDEX" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="RUNN!NG BUNNY" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="WICTHØR" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="KIRILLE" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="MAGICA" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="ШЕЛОНЯ" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="LILAKOVAYA" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="DARYA DURYEVNA" data-slider-dot></button>
-          <button class="slider-dot" type="button" aria-label="LINDA" data-slider-dot></button>
-        </div>
-      </div>
-    </section>
-    <section id="interview" class="interview-screen" aria-label="Интервью с SIXXXSEVEN" hidden>
-      <div class="interview-heading">
-        <p class="interview-kicker">[INTERVIEW]</p>
-        <h2 class="interview-title">
-          <span>SIXXX</span>
-          <span>SEVEN</span>
-        </h2>
-      </div>
-      <div class="interview-list">
-        <article class="interview-item">
-          <h3>С чего начался твой путь артиста?</h3>
-          <p>
-            Мой путь артиста начался в 2020 году, тогда я начал более осознанно заниматься музыкой и открыл для себя
-            диджеинг
-          </p>
-          <p>
-            Так как у меня есть музыкальное образования, то я без проблем освоил это дело и уже в 21 году давал свои
-            первые выступления, а также провел свою первую техно вечеринку
-            <a class="interview-link" href="https://t.me/bunker555040" target="_blank" rel="noreferrer">BUNKER</a>,
-            которая проходила на заброшенной военной базе в Ленинградской области, на бывшем складе боеприпасов
-          </p>
-          <p>
-            C 22–24 год был резидентом и арт-диром клуба <strong>griboedov basement</strong>, где сделал десятки
-            вечеринок и отыграл сотни часов музыки
-          </p>
-        </article>
-        <article class="interview-item">
-          <h3>Какая история у твоего никнейма?</h3>
-          <p>
-            Я придумал этот никнейм <strong>в 2020 году</strong>, по чистой случайности, подумал, что хорошо звучит
-          </p>
-          <p>
-            Если искать в этом скрытый символизм то недавно я понял что у моей мамы день рождения <strong>06/07</strong>
-          </p>
-          <p>*Американский мем — угарное совпадение</p>
-        </article>
-        <article class="interview-item">
-          <h3>Над какими проектами работаешь сейчас?</h3>
-          <p>
-            Сейчас я активно работаю над клубом
-            <a class="interview-link" href="https://t.me/kontrkult21" target="_blank" rel="noreferrer">KONTRKULT</a>
-            и своей вечеринкой
-            <a class="interview-link" href="https://t.me/bunker555040" target="_blank" rel="noreferrer">BUNKER</a>
-          </p>
-          <p>
-            В свободное время готовлю свой новый музыкальный техно проект, где планирую сделать <strong>первый релиз</strong>
-            уже этим летом
-          </p>
-        </article>
-        <article class="interview-item">
-          <h3>Что бы ты посоветовал начинающим артистам?</h3>
-          <p>
-            <strong>Любите свое дело</strong> и никого не слушайте, если это ваше, то вы все поймете и все получится
-          </p>
-          <p>
-            <strong>Не бойтесь ошибаться</strong> или если вы думаете что это долго и сложно, то как раз таки в этом
-            пути весь смысл и кайф, так что действуйте
-          </p>
-        </article>
-        <button class="interview-hide" type="button">Скрыть интервью</button>
-      </div>
-    </section>
-    <section class="location-screen" aria-label="ЛОКАЦИЯ">
-      <div class="location-content">
-        <p class="location-kicker">[LOCATION]</p>
-        <h2 class="location-title">КЛУБ «РЯДОМ»</h2>
-        <p class="location-description">территория бывшего бомбоубежища Онежского тракторного завода</p>
-      </div>
-      <div class="location-gallery" aria-label="Фотографии клуба Рядом">
-        <button class="location-gallery-item" type="button" aria-label="Открыть фото: вход в клуб Рядом">
-          <img src="./location-1.webp" alt="Вход в клуб Рядом" loading="lazy" decoding="async" />
-        </button>
-        <button class="location-gallery-item" type="button" aria-label="Открыть фото: барная зона клуба Рядом">
-          <img src="./location-2.webp" alt="Барная зона клуба Рядом" loading="lazy" decoding="async" />
-        </button>
-        <button class="location-gallery-item" type="button" aria-label="Открыть фото: интерьер клуба Рядом">
-          <img src="./location-3.webp" alt="Интерьер клуба Рядом" loading="lazy" decoding="async" />
-        </button>
-      </div>
-      <div class="location-map" aria-label="Карта: Петрозаводск, Литейная площадь, 1">
-        <div id="location-map" class="location-map-canvas"></div>
       </div>
     </section>
     <div class="photo-modal" aria-hidden="true" role="dialog" aria-label="Просмотр фотографии" tabindex="-1">
@@ -349,5 +137,6 @@
       <img class="photo-modal-image" src="" alt="" />
       <button class="photo-modal-nav photo-modal-next" type="button" aria-label="Следующее фото">›</button>
     </div>
+
   </body>
 </html>

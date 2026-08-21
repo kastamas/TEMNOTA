@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght@24..48,400..700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260821-148" />
+    <link rel="stylesheet" href="./styles.css?v=20260821-169" />
     <script src="./script.js?v=20260821-10" defer></script>
   </head>
   <body class="event-detail-page">
@@ -38,9 +38,16 @@
         </figure>
 
         <article class="event-detail-copy">
-          <p class="event-detail-kicker">12.09.2026 · КЛУБ «РЯДОМ»</p>
+          <div class="event-detail-facts">
+            <p><span>ДАТА / ВРЕМЯ</span><strong>12 СЕНТЯБРЯ<br />23:00 — 05:00</strong></p>
+            <p><span>МЕСТО</span><strong>КЛУБ «РЯДОМ»<br />ЛИТЕЙНАЯ, 1</strong></p>
+          </div>
           <h1>DRAM + NUWEI</h1>
           <p class="event-detail-lead">12 сентября в клубе «Рядом» встретятся два направления электронной музыки</p>
+          <a class="event-detail-ticket" href="#event/2832121">
+            <span class="event-detail-ticket-label"><span class="material-symbols-outlined event-detail-ticket-icon" aria-hidden="true">confirmation_number</span><span>БИЛЕТЫ</span></span>
+            <span class="material-symbols-outlined event-detail-ticket-arrow" aria-hidden="true">south_east</span>
+          </a>
 
           <section class="event-detail-direction">
             <span>01 / DRAM</span>
@@ -62,12 +69,6 @@
             </div>
           </section>
 
-          <div class="event-detail-facts">
-            <p><span>ДАТА / ВРЕМЯ</span><strong>12 СЕНТЯБРЯ<br />23:00 — 05:00</strong></p>
-            <p><span>МЕСТО</span><strong>КЛУБ «РЯДОМ»<br />ЛИТЕЙНАЯ, 1</strong></p>
-          </div>
-
-          <a class="event-detail-ticket" href="#event/2832121">БИЛЕТЫ <span class="material-symbols-outlined event-detail-ticket-arrow" aria-hidden="true">south_east</span></a>
           <section class="event-detail-countdown" data-countdown-date="2026-09-12T23:00:00+03:00" aria-label="До события осталось">
             <span class="event-detail-countdown-label">ДО НАЧАЛА</span>
             <div class="event-detail-countdown-grid">
@@ -77,6 +78,11 @@
               <span class="event-detail-countdown-unit"><strong data-countdown-seconds>00</strong><small data-countdown-seconds-label>секунд</small></span>
             </div>
           </section>
+          <a class="event-detail-telegram" href="https://t.me/dram_ptz" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined event-detail-telegram-icon" aria-hidden="true">send</span>
+            <span class="event-detail-telegram-copy"><small>TELEGRAM-КАНАЛ</small><strong>DRAM · @dram_ptz</strong></span>
+            <span class="material-symbols-outlined event-detail-telegram-arrow" aria-hidden="true">south_east</span>
+          </a>
           <div class="event-detail-widget" aria-hidden="true">
             <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
             <script>
@@ -102,5 +108,14 @@
         </article>
       </div>
     </main>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span class="site-footer-about">TMNT — КАРЕЛЬСКАЯ ПРОМО-ГРУППА, СПЕЦИАЛИЗИРУЮЩАЯСЯ НА СОВРЕМЕННОМ АНДЕГРАУНДНОМ ЗВУКЕ</span>
+        <span>ОРГАНИЗАТОР: ИП СИДОРОВ М.М.</span>
+        <span>СВЯЗЬ: <a href="mailto:mikxsid@gmail.com">MIKXSID@GMAIL.COM</a></span>
+        <span>ИНН: 101602314369</span>
+        <span class="site-footer-copyright">© 2026 PETROZAVODSK</span>
+      </div>
+    </footer>
   </body>
 </html>

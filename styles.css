@@ -70,7 +70,7 @@ body.poster-only {
   display: block !important;
 }
 
-.poster-only > :not(.site-header):not(.top-event-poster):not(#temnota-ii-photos):not(.photo-modal):not(.radario-popup-body) {
+.poster-only > :not(.site-header):not(.top-event-poster):not(#temnota-ii-photos):not(.site-footer):not(.photo-modal):not(.radario-popup-body) {
   display: none !important;
 }
 
@@ -191,7 +191,7 @@ a {
   z-index: 2;
   width: min(calc(100% - (var(--page-gutter) * 2)), var(--max-width));
   margin: 0 auto;
-  padding: 16px 0 80px;
+  padding: 16px 0 32px;
 }
 
 .event-detail-back {
@@ -222,6 +222,41 @@ a {
 }
 
 .event-detail .event-detail-section-title a span {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.35em;
+  font-weight: 500;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.archive-events-back {
+  position: relative;
+  z-index: 2;
+  width: min(calc(100% - (var(--page-gutter) * 2)), var(--max-width));
+  margin: 0 auto;
+  padding: 16px 0 20px;
+}
+
+.archive-events-back .event-detail-section-title {
+  margin: 0;
+}
+
+.archive-events-back .event-detail-section-title a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(244, 244, 241, 0.48);
+  transition: color 180ms ease;
+}
+
+.archive-events-back .event-detail-section-title a:hover,
+.archive-events-back .event-detail-section-title a:focus-visible {
+  color: #f4f4f1;
+  outline: none;
+}
+
+.archive-events-back .event-detail-section-title a span {
   display: inline-flex;
   align-items: center;
   font-size: 1.35em;
@@ -268,7 +303,7 @@ a {
 }
 
 .event-detail-copy h1 {
-  margin: 16px 0 24px;
+  margin: 24px 0;
   font-size: clamp(3.5rem, 5vw, 5.5rem);
   font-weight: 900;
   letter-spacing: -0.075em;
@@ -339,9 +374,9 @@ a {
 
 .event-detail-facts p {
   display: grid;
-  gap: 24px;
+  gap: 12px;
   margin: 0;
-  padding: 24px;
+  padding: 16px;
 }
 
 .event-detail-facts p + p {
@@ -363,6 +398,14 @@ a {
   color: #080808;
   font-size: 1.45rem;
   font-weight: 900;
+  margin-bottom: 24px;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.event-detail-ticket:hover,
+.event-detail-ticket:focus-visible {
+  background: #080808;
+  color: #f2f2ed;
 }
 
 .event-detail-ticket-arrow {
@@ -374,10 +417,21 @@ a {
   font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 40;
 }
 
+.event-detail-ticket-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.event-detail-ticket-icon {
+  flex: 0 0 auto;
+  font-size: 32px;
+  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 40;
+}
+
 .event-detail-countdown {
   padding: 24px;
   border: 1px solid rgba(244, 244, 241, 0.22);
-  border-top: 0;
 }
 
 .event-detail-countdown-label {
@@ -432,6 +486,52 @@ a {
   white-space: nowrap;
 }
 
+.event-detail-telegram {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  min-height: 96px;
+  padding: 20px 24px;
+  background: #f2f2ed;
+  color: #080808;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.event-detail-telegram-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.event-detail-telegram small {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.event-detail-telegram strong {
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.event-detail-telegram-icon,
+.event-detail-telegram-arrow {
+  font-size: 38px;
+  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 40;
+}
+
+.event-detail-telegram-icon {
+  transform: rotate(-10deg);
+}
+
+.event-detail-telegram:hover,
+.event-detail-telegram:focus-visible {
+  background: #080808;
+  color: #f2f2ed;
+  outline: none;
+}
+
 .event-detail-widget {
   position: absolute;
   width: 1px;
@@ -441,9 +541,22 @@ a {
 }
 
 @media (min-width: 761px) {
-  .event-detail-lead,
-  .event-detail-direction {
+  .event-detail-lead {
     padding-right: 64px;
+  }
+
+  .event-detail-direction {
+    margin-right: 64px;
+  }
+
+  .event-detail-ticket,
+  .event-detail-countdown,
+  .event-detail-telegram {
+    margin-right: 64px;
+  }
+
+  .event-detail-facts {
+    width: 50%;
   }
 }
 
@@ -501,8 +614,44 @@ a {
   }
 
   .event-detail-facts p {
-    gap: 18px;
-    padding: 18px;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .event-detail-telegram {
+    grid-template-columns: 30px minmax(0, 1fr) 30px;
+    gap: 10px;
+    min-height: 88px;
+    padding: 16px;
+  }
+
+  .event-detail-telegram small {
+    font-size: 0.5rem;
+  }
+
+  .event-detail-telegram strong {
+    overflow-wrap: anywhere;
+    font-size: clamp(0.9rem, 4.6vw, 1.15rem);
+  }
+
+  .event-detail-telegram-icon,
+  .event-detail-telegram-arrow {
+    font-size: 30px;
+  }
+
+  .event-detail-ticket {
+    min-height: 80px;
+    padding: 16px;
+    font-size: 1.15rem;
+  }
+
+  .event-detail-ticket-label {
+    gap: 10px;
+  }
+
+  .event-detail-ticket-icon,
+  .event-detail-ticket-arrow {
+    font-size: 30px;
   }
 }
 
@@ -616,8 +765,7 @@ a {
 }
 
 /* Архив TEMNOTA II: оставляем только фотогалерею и её лайтбокс. */
-.archive-photos-only > section:not(#temnota-ii-photos),
-.archive-photos-only > .site-footer {
+.archive-photos-only > section:not(#temnota-ii-photos) {
   display: none !important;
 }
 
@@ -681,7 +829,7 @@ a {
 }
 
 .site-footer {
-  display: none;
+  display: block;
   position: relative;
   z-index: 2;
   width: 100%;

@@ -1,4 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const posterFrame = document.querySelector(".event-poster-frame");
+  const posterReveal = document.querySelector(".event-poster-reveal");
+  const mobilePosterQuery = window.matchMedia("(max-width: 620px)");
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (posterFrame && posterReveal) {
+    let posterTicking = false;
+
+    const updatePosterReveal = () => {
+      posterTicking = false;
+
+      if (!mobilePosterQuery.matches || reducedMotionQuery.matches) {
+        posterReveal.style.removeProperty("--reveal-progress");
+        return;
+      }
+
+      const frameTop = posterFrame.getBoundingClientRect().top;
+      const travel = Math.max(240, posterFrame.offsetHeight * 0.58);
+      const progress = Math.min(1, Math.max(0, -frameTop / travel));
+      posterReveal.style.setProperty("--reveal-progress", progress.toFixed(3));
+    };
+
+    const requestPosterUpdate = () => {
+      if (posterTicking) return;
+      posterTicking = true;
+      window.requestAnimationFrame(updatePosterReveal);
+    };
+
+    updatePosterReveal();
+    window.addEventListener("scroll", requestPosterUpdate, { passive: true });
+    window.addEventListener("resize", requestPosterUpdate);
+  }
+
   const targetDate = new Date("2026-06-06T23:00:00+03:00");
   const targetTimestamp = Math.floor(targetDate.getTime() / 1000);
 

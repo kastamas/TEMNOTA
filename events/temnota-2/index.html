@@ -26,12 +26,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260821-32" />
+    <link rel="stylesheet" href="./styles.css?v=20260821-107" />
     <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/src/flipdown.min.js" defer></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
     <script src="./script.js?v=20260617-5" defer></script>
   </head>
-  <body>
+  <body class="archive-photos-only">
     <div class="noise"></div>
     <div class="scanlines"></div>
 
@@ -48,12 +48,14 @@
         <div class="temnota-ii-photo temnota-ii-photo-featured">
           <img src="./temnota-ii-photo-01.webp" alt="Диджей за пультом на TEMNOTA II" loading="eager" decoding="async" />
           <div class="temnota-ii-heading">
-            <span class="temnota-ii-title">TEMNOTA II: SIXXXSEVEN</span>
-            <span class="temnota-ii-credit">
-              Photo Report by
-              <a href="https://t.me/romafloral" target="_blank" rel="noreferrer">Roma Floral</a>
-            </span>
-            <span class="temnota-ii-kicker">06.06.2026</span>
+            <div class="temnota-ii-heading-copy">
+              <span class="temnota-ii-title">TEMNOTA II: SIXXXSEVEN</span>
+              <span class="temnota-ii-kicker">06.06.2026 · КЛУБ «РЯДОМ»</span>
+              <span class="temnota-ii-credit">
+                PHOTO REPORT BY
+                <a href="https://t.me/romafloral" target="_blank" rel="noreferrer">ROMA FLORAL</a>
+              </span>
+            </div>
           </div>
         </div>
         <div id="temnota-ii-photo-list" class="temnota-ii-photo-list">
@@ -87,7 +89,7 @@
         </div>
       </div>
     </section>
-    <section class="intro-screen" aria-label="TMNT">
+    <section class="intro-screen" aria-label="TMNT" hidden>
       <svg class="intro-logo" role="img" aria-label="TMNT" viewBox="0 0 919 275" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="tmnt-logo-clip">
@@ -425,6 +427,15 @@
         </div>
       </div>
     </section>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span class="site-footer-about">TMNT — КАРЕЛЬСКАЯ ПРОМО-ГРУППА, СПЕЦИАЛИЗИРУЮЩАЯСЯ НА СОВРЕМЕННОМ АНДЕГРАУНДНОМ ЗВУКЕ</span>
+        <span>ОРГАНИЗАТОР: ИП СИДОРОВ М.М.</span>
+        <span>СВЯЗЬ: <a href="mailto:mikxsid@gmail.com">MIKXSID@GMAIL.COM</a></span>
+        <span>ИНН: 101602314369</span>
+        <span class="site-footer-copyright">© 2026 PETROZAVODSK</span>
+      </div>
+    </footer>
     <div class="photo-modal" aria-hidden="true" role="dialog" aria-label="Просмотр фотографии" tabindex="-1">
       <button class="photo-modal-close" type="button" aria-label="Закрыть фотографию">×</button>
       <button class="photo-modal-nav photo-modal-prev" type="button" aria-label="Предыдущее фото">‹</button>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DRAM + NUWEI</title>
+    <title>TMNT</title>
     <meta
       name="description"
       content="12 сентября, 23:00. Литейная, 1 / клуб «Рядом»."
@@ -21,7 +21,7 @@
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="1200" />
-    <meta property="og:image:alt" content="DRAM x NUWEI — 12 сентября в клубе «Рядом»" />
+    <meta property="og:image:alt" content="DRAM + NUWEI — 12 сентября в клубе «Рядом»" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="DRAM + NUWEI" />
     <meta name="twitter:description" content="12 сентября, 23:00. Литейная, 1 / клуб «Рядом»." />
@@ -35,11 +35,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&family=Rubik:ital,wght@1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" as="image" href="./dram-nuwei-poster-v2.webp" />
-    <link rel="stylesheet" href="./styles.css?v=20260821-32" />
-    <script src="./script.js?v=20260821-8" defer></script>
+    <link rel="preload" as="image" href="./dram-nuwei-poster-vertical.webp" />
+  <link rel="stylesheet" href="./styles.css?v=20260821-119" />
+    <script src="./script.js?v=20260821-10" defer></script>
   </head>
-  <body class="past-events-page">
+  <body class="poster-only past-events-page">
     <div class="noise"></div>
     <div class="scanlines"></div>
 
@@ -51,13 +51,58 @@
       </div>
     </header>
 
-    <section class="top-event-poster" aria-label="DRAM: NUWEI — 12 сентября, клуб «Рядом»">
-      <img
-        src="./dram-nuwei-poster-v2.webp"
-        alt="DRAM: NUWEI — 12 сентября в клубе «Рядом»"
-        fetchpriority="high"
-      />
-      <div class="event-countdown" data-countdown-date="2026-09-12T23:00:00+03:00" aria-label="До события осталось">
+    <section class="top-event-poster" aria-label="DRAM + NUWEI — 12 сентября, клуб «Рядом»">
+      <div class="top-event-content">
+      <h1 class="past-events-section-title current-events-section-title">АКТУАЛЬНЫЕ СОБЫТИЯ</h1>
+      <a class="event-mobile-card" href="#event/2832121" aria-label="Купить билеты на DRAM + NUWEI">
+        <span class="event-mobile-card-index">[ 03 ]</span>
+        <span class="event-mobile-card-copy">
+          <strong>DRAM + NUWEI</strong>
+          <small>12.09.2026 · КЛУБ «РЯДОМ»</small>
+          <span class="event-mobile-card-action">БИЛЕТЫ</span>
+        </span>
+        <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M7 17h10V7M7 7l10 10" />
+        </svg>
+      </a>
+      <figure class="event-poster-frame">
+        <a href="./events/drum+nuwei/" aria-label="Подробнее о событии DRAM + NUWEI">
+          <img
+            src="./dram-nuwei-poster-vertical.webp"
+            alt="DRAM + NUWEI — 12 сентября в клубе «Рядом»"
+            fetchpriority="high"
+          />
+        </a>
+        <a class="past-events-banner-link past-events-photo-link current-event-banner" href="./events/drum+nuwei/" aria-label="Открыть страницу события DRAM + NUWEI">
+          <span class="past-events-banner-index">[ 03 ]</span>
+          <span class="past-events-banner-event">
+            <strong>DRAM + NUWEI</strong>
+            <small>12.09.2026 · КЛУБ «РЯДОМ»</small>
+          </span>
+          <span class="past-events-banner-action">
+            <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M6.4 18 5 16.6 14.6 7H6V5h12v12h-2V8.4z" />
+            </svg>
+          </span>
+        </a>
+      </figure>
+      <div class="top-event-aside">
+      <div class="event-description">
+        <a class="event-title-card" href="#event/2832121" aria-label="Открыть билеты на DRAM + NUWEI">
+          <span class="event-title-card-index">[ 03 ]</span>
+          <div class="event-title-card-copy">
+            <h1>DRAM + NUWEI</h1>
+            <p class="event-description-meta">12.09.2026 · КЛУБ «РЯДОМ»</p>
+          </div>
+          <span class="event-title-card-action">
+            БИЛЕТЫ
+            <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M7 17h10V7M7 7l10 10" />
+            </svg>
+          </span>
+        </a>
+      </div>
+      <!-- <div class="event-countdown" data-countdown-date="2026-09-12T23:00:00+03:00" aria-label="До события осталось">
         <span class="event-countdown-kicker">ДО НАЧАЛА</span>
         <div class="event-countdown-grid">
           <span class="event-countdown-unit">
@@ -77,60 +122,77 @@
             <small data-countdown-seconds-label>секунд</small>
           </span>
         </div>
-      </div>
-      <div class="top-event-ticket">
+      </div> -->
+      <div class="top-event-ticket" id="event-ticket">
         <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
         <script>
           radario.Widgets.Event({
             params: {
               accentColor: "rgba(210, 2, 2, 1)",
               textBtnColor: "#FFFFFF",
+              backgroundColor: null,
+              configuration: 19,
+              isSkipTicketSelectStep: false,
+              showDynamicPricing: false,
             },
+            buttonText: "БИЛЕТЫ",
+            buttonFontSize: "14px",
+            buttonPadding: "8px 16px",
+            buttonBorderRadius: "0",
             standalone: false,
             createButton: true,
             eventId: 2832121,
           });
         </script>
       </div>
+      </div>
+      </div>
     </section>
 
     <section id="temnota-ii-photos" class="temnota-ii-screen" aria-label="Фотографии TEMNOTA II">
-      <h2 class="past-events-section-title">ПРОШЛЫЕ СОБЫТИЯ</h2>
+      <h2 class="past-events-section-title">ПРОШЕДШИЕ СОБЫТИЯ</h2>
       <div class="temnota-ii-gallery" aria-label="Галерея фотографий TEMNOTA II">
-        <div class="temnota-ii-photo temnota-ii-photo-featured">
+        <a class="temnota-ii-photo temnota-ii-photo-featured past-event-card-link" href="./events/temnota-2/" aria-label="Открыть TEMNOTA II: SIXXXSEVEN">
           <img src="./temnota-ii-photo-01.webp" alt="Диджей за пультом на TEMNOTA II" loading="eager" decoding="async" />
-          <a class="past-events-banner-link past-events-photo-link" href="./archive/temnota-2/">
+          <div class="past-events-banner-link past-events-photo-link">
             <span class="past-events-banner-index">[ 02 ]</span>
             <span class="past-events-banner-event">
               <strong>TEMNOTA II: SIXXXSEVEN</strong>
               <small>06.06.2026 · КЛУБ «РЯДОМ»</small>
             </span>
             <span class="past-events-banner-action">
-              СМОТРЕТЬ
               <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
                 <path d="M6.4 18 5 16.6 14.6 7H6V5h12v12h-2V8.4z" />
               </svg>
             </span>
-          </a>
-        </div>
-        <div class="temnota-ii-photo temnota-ii-photo-featured past-event-card past-event-card-temnota-i">
+          </div>
+        </a>
+        <a class="temnota-ii-photo temnota-ii-photo-featured past-event-card past-event-card-temnota-i past-event-card-link" href="./events/temnota-1/" aria-label="Открыть TEMNOTA I: BOHEMIUM">
           <img src="./temnota-i-bohemium-cover-v2.webp" alt="TEMNOTA I: BOHEMIUM" loading="eager" decoding="async" />
-          <a class="past-events-banner-link past-events-photo-link" href="./archive/temnota-1/">
+          <div class="past-events-banner-link past-events-photo-link">
             <span class="past-events-banner-index">[ 01 ]</span>
             <span class="past-events-banner-event">
               <strong>TEMNOTA I: BOHEMIUM</strong>
               <small>08.11.2025 · КЛУБ «ПРОГРЕСС»</small>
             </span>
             <span class="past-events-banner-action">
-              СМОТРЕТЬ
               <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
                 <path d="M6.4 18 5 16.6 14.6 7H6V5h12v12h-2V8.4z" />
               </svg>
             </span>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </section>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span class="site-footer-about">TMNT — КАРЕЛЬСКАЯ ПРОМО-ГРУППА, СПЕЦИАЛИЗИРУЮЩАЯСЯ НА СОВРЕМЕННОМ АНДЕГРАУНДНОМ ЗВУКЕ</span>
+        <span>ОРГАНИЗАТОР: ИП СИДОРОВ М.М.</span>
+        <span>СВЯЗЬ: <a href="mailto:mikxsid@gmail.com">MIKXSID@GMAIL.COM</a></span>
+        <span>ИНН: 101602314369</span>
+        <span class="site-footer-copyright">© 2026 PETROZAVODSK</span>
+      </div>
+    </footer>
     <div class="photo-modal" aria-hidden="true" role="dialog" aria-label="Просмотр фотографии" tabindex="-1">
       <button class="photo-modal-close" type="button" aria-label="Закрыть фотографию">×</button>
       <button class="photo-modal-nav photo-modal-prev" type="button" aria-label="Предыдущее фото">‹</button>

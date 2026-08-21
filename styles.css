@@ -374,6 +374,64 @@ a {
   font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 40;
 }
 
+.event-detail-countdown {
+  padding: 24px;
+  border: 1px solid rgba(244, 244, 241, 0.22);
+  border-top: 0;
+}
+
+.event-detail-countdown-label {
+  display: block;
+  margin-bottom: 18px;
+  color: rgba(244, 244, 241, 0.48);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
+.event-detail-countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.event-detail-countdown-unit {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 0 12px;
+  text-align: center;
+}
+
+.event-detail-countdown-unit:first-child {
+  padding-left: 0;
+}
+
+.event-detail-countdown-unit:last-child {
+  padding-right: 0;
+}
+
+.event-detail-countdown-unit + .event-detail-countdown-unit {
+  border-left: 1px solid rgba(244, 244, 241, 0.18);
+}
+
+.event-detail-countdown-unit strong {
+  font-size: clamp(1.35rem, 2.5vw, 2.25rem);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.event-detail-countdown-unit small {
+  overflow: hidden;
+  color: rgba(244, 244, 241, 0.46);
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .event-detail-widget {
   position: absolute;
   width: 1px;

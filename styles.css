@@ -538,6 +538,10 @@ a {
   transform: rotate(-10deg);
 }
 
+.event-detail-telegram + .event-detail-telegram {
+  margin-top: 12px;
+}
+
 .event-detail-instagram-icon {
   transform: none;
 }

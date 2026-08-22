@@ -547,6 +547,16 @@ a {
   stroke: none;
 }
 
+.event-detail-vk-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+}
+
 .event-detail-telegram:hover,
 .event-detail-telegram:focus-visible {
   background: #080808;
@@ -657,8 +667,10 @@ a {
   }
 
   .event-detail-telegram-icon,
-  .event-detail-telegram-arrow {
-    font-size: 30px;
+  .event-detail-telegram-arrow,
+  .event-detail-vk-icon {
+    width: 30px;
+    height: 30px;
   }
 
   .event-detail-ticket {

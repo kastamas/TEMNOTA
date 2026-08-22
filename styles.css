@@ -534,8 +534,9 @@ a {
   stroke-linejoin: miter;
 }
 
-.event-detail-telegram-icon {
-  transform: rotate(-10deg);
+.event-detail-telegram-brand-icon {
+  fill: currentColor;
+  stroke: none;
 }
 
 .event-detail-telegram + .event-detail-telegram {
@@ -804,16 +805,23 @@ a {
 }
 
 /* Архив TEMNOTA II: оставляем только фотогалерею и её лайтбокс. */
+.archive-photos-only,
+.temnota-i-archive {
+  background: #101010;
+}
+
 .archive-photos-only > section:not(#temnota-ii-photos) {
   display: none !important;
 }
 
 .archive-photos-only .temnota-ii-screen {
   padding-bottom: 24px;
+  background: #101010;
 }
 
 .temnota-i-archive .temnota-ii-screen {
   padding-bottom: 24px;
+  background: #101010;
 }
 
 @media (max-width: 620px) {
@@ -905,6 +913,10 @@ a {
 
 .site-footer-socials a {
   color: #f4f4f1;
+}
+
+.site-footer-contact {
+  text-transform: none;
 }
 
 .site-footer-disclaimer {
@@ -4217,6 +4229,10 @@ h2 {
 .past-event-card-link:focus-visible {
   outline: 2px solid #f2f2ed;
   outline-offset: 4px;
+}
+
+.past-event-card-link {
+  cursor: pointer;
 }
 
 .past-event-card-link:hover > img,

@@ -538,6 +538,19 @@ a {
   transform: rotate(-10deg);
 }
 
+.event-detail-instagram {
+  margin-top: 12px;
+}
+
+.event-detail-instagram-icon {
+  transform: none;
+}
+
+.event-detail-instagram-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
 .event-detail-telegram:hover,
 .event-detail-telegram:focus-visible {
   background: #080808;

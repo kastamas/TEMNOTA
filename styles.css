@@ -17,6 +17,114 @@
   --shadow: 0 26px 90px rgba(0, 0, 0, 0.5);
 }
 
+/* Privacy policy */
+.privacy-page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #f2f2f2;
+}
+
+.privacy-main {
+  width: min(960px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+
+.privacy-back {
+  display: inline-block;
+  margin-bottom: 56px;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.privacy-back:hover,
+.privacy-document a:hover {
+  opacity: 0.65;
+}
+
+.privacy-document {
+  max-width: 760px;
+}
+
+.privacy-header {
+  margin-bottom: 64px;
+}
+
+.privacy-kicker,
+.privacy-updated {
+  margin: 0;
+  color: #999;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.privacy-header h1 {
+  max-width: 700px;
+  margin: 14px 0 18px;
+  font-size: clamp(38px, 7vw, 76px);
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.privacy-document section {
+  padding: 32px 0;
+  border-top: 1px solid #333;
+}
+
+.privacy-document h2 {
+  margin: 0 0 20px;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.privacy-document p {
+  margin: 0 0 14px;
+  color: #c8c8c8;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.privacy-document p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-document a {
+  color: #fff;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .privacy-main {
+    width: min(100% - 28px, 960px);
+    padding-top: 28px;
+  }
+
+  .privacy-back {
+    margin-bottom: 40px;
+  }
+
+  .privacy-header {
+    margin-bottom: 44px;
+  }
+
+  .privacy-document section {
+    padding: 26px 0;
+  }
+
+  .privacy-document p {
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 900px) {
   :root {
     --page-gutter: 24px;
@@ -87,8 +195,14 @@ body.poster-only {
   margin: 0 auto;
 }
 
-.poster-only .top-event-content > :not(.event-poster-frame):not(.current-events-section-title):not(.current-event-banner) {
+.poster-only .top-event-content > :not(.event-poster-frame):not(.current-events-grid):not(.current-events-section-title):not(.current-event-banner) {
   display: none !important;
+}
+
+.poster-only .current-events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 
 .poster-only .event-poster-frame {
@@ -157,9 +271,15 @@ body.poster-only {
   }
 
   .poster-only .event-poster-frame {
-    grid-column: 1;
+    grid-column: auto;
     width: 100%;
     margin: 0;
+  }
+
+  .poster-only .current-events-grid {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
   }
 
   .poster-only .temnota-ii-gallery {
@@ -2838,6 +2958,18 @@ button.temnota-ii-photo {
   width: 100%;
   height: 100%;
   min-height: inherit;
+}
+
+.event-detail-map {
+  width: auto;
+  min-height: 420px;
+  margin-top: 12px;
+}
+
+@media (min-width: 761px) {
+  .event-detail-map {
+    margin-right: 64px;
+  }
 }
 
 @media (max-width: 900px) {

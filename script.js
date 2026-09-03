@@ -126,7 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (mapElement && typeof ymaps !== "undefined") {
     ymaps.ready(() => {
-      const locationCoordinates = [61.784531, 34.369229];
+      const locationCoordinates = [
+        Number.parseFloat(mapElement.dataset.latitude || "61.784531"),
+        Number.parseFloat(mapElement.dataset.longitude || "34.369229"),
+      ];
+      const locationName = mapElement.dataset.locationName || "Клуб «Рядом»";
+      const locationAddress = mapElement.dataset.locationAddress || "Петрозаводск, Литейная площадь, 1";
       const locationMap = new ymaps.Map(
         mapElement,
         {
@@ -143,8 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const locationPlacemark = new ymaps.Placemark(
         locationCoordinates,
         {
-          balloonContentHeader: "Клуб «Рядом»",
-          balloonContentBody: "Петрозаводск, Литейная площадь, 1",
+          balloonContentHeader: locationName,
+          balloonContentBody: locationAddress,
         },
         {
           preset: "islands#redDotIcon",

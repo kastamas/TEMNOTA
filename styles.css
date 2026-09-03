@@ -2966,6 +2966,131 @@ button.temnota-ii-photo {
   margin-top: 12px;
 }
 
+.related-events {
+  padding: 24px var(--page-gutter) 96px;
+  background: #101010;
+}
+
+.related-events-inner {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+}
+
+.related-events h2 {
+  margin: 0 0 24px;
+  color: #f4f4f1;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+.related-events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.related-event-card {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  background: #f2f2ed;
+  color: #080808;
+}
+
+.related-event-image {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #080808;
+}
+
+.related-event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.related-event-card:hover .related-event-image img,
+.related-event-card:focus-visible .related-event-image img {
+  transform: scale(1.025);
+}
+
+.related-event-card:focus-visible {
+  outline: 2px solid #f2f2ed;
+  outline-offset: 4px;
+}
+
+.related-event-copy {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 34px;
+  align-items: center;
+  gap: 12px;
+  min-height: 92px;
+  padding: 14px 16px;
+}
+
+.related-event-index {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.related-event-name {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.related-event-name strong {
+  font-size: clamp(15px, 1.25vw, 20px);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+.related-event-name small {
+  overflow: hidden;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.related-event-copy .corner-arrow {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+@media (max-width: 900px) {
+  .related-events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 620px) {
+  .related-events {
+    padding: 16px var(--page-gutter) 64px;
+  }
+
+  .related-events-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .related-event-copy {
+    grid-template-columns: 38px minmax(0, 1fr) 34px;
+  }
+
+  .related-event-name strong {
+    font-size: 18px;
+  }
+}
+
 @media (min-width: 761px) {
   .event-detail-map {
     margin-right: 64px;

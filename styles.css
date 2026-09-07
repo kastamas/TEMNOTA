@@ -4626,6 +4626,82 @@ h2 {
   transform-origin: center;
 }
 
+/* Повторяет карточки архива с главной на странице актуального события. */
+.past-events-preview {
+  padding-bottom: 24px;
+  background: #101010;
+}
+
+.past-events-preview .past-events-section-title {
+  margin-top: 40px;
+}
+
+.past-events-preview .past-event-card-link .past-events-banner-link {
+  color: #080808;
+  background: #f2f2ed;
+}
+
+.past-events-preview .past-event-card-link .past-events-photo-link {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.past-events-preview .past-event-card-link .past-events-banner-link:hover {
+  color: #f2f2ed;
+  background: #101010;
+}
+
+@media (min-width: 621px) {
+  .past-events-preview .temnota-ii-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .past-events-preview .temnota-ii-photo-featured {
+    grid-column: auto;
+  }
+
+  .past-events-preview .past-event-card-link .past-events-photo-link {
+    grid-template-columns: 44px minmax(0, 1fr) 52px;
+    gap: 12px;
+    min-height: 92px;
+    padding: 14px 16px;
+  }
+
+  .past-events-preview .past-event-card-link .past-events-banner-index {
+    font-size: 10px;
+  }
+
+  .past-events-preview .past-event-card-link .past-events-banner-event {
+    gap: 5px;
+  }
+
+  .past-events-preview .past-event-card-link .past-events-banner-event strong {
+    font-size: clamp(15px, 1.25vw, 20px);
+  }
+
+  .past-events-preview .past-event-card-link .past-events-banner-event small {
+    font-size: 9px;
+  }
+
+  .past-events-preview .past-event-card-link .corner-arrow {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  .past-events-preview {
+    padding-bottom: 16px;
+  }
+
+  .past-events-preview .past-events-section-title {
+    margin-top: 48px;
+  }
+}
+
 .poster-only .current-event-banner {
   position: relative;
   inset: auto;

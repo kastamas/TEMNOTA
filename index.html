@@ -31,7 +31,7 @@
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="stylesheet" href="./fonts.css?v=20260902-1" />
     <link rel="preload" as="image" href="./dram-nuwei-poster-vertical.webp" />
-  <link rel="stylesheet" href="./styles.css?v=20260822-179" />
+  <link rel="stylesheet" href="./styles.css?v=20260917-2" />
     <script src="./script.js?v=20260903-1" defer></script>
   </head>
   <body class="poster-only past-events-page">
@@ -46,109 +46,24 @@
       </div>
     </header>
 
-    <section class="top-event-poster" aria-label="Актуальные события TMNT">
-      <div class="top-event-content">
-      <h1 class="past-events-section-title current-events-section-title">АКТУАЛЬНЫЕ СОБЫТИЯ</h1>
-      <a class="event-mobile-card" href="#event/2832121" aria-label="Купить билеты на DRAM + NUWEI">
-        <span class="event-mobile-card-index">[ 03 ]</span>
-        <span class="event-mobile-card-copy">
-          <strong>DRAM + NUWEI</strong>
-          <small>12.09.2026 · КЛУБ «РЯДОМ»</small>
-          <span class="event-mobile-card-action">БИЛЕТЫ</span>
-        </span>
-        <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
-          <path d="M7 17h10V7M7 7l10 10" />
-        </svg>
-      </a>
-      <div class="current-events-grid">
-      <figure class="event-poster-frame">
-        <a href="./events/drum+nuwei/" aria-label="Подробнее о событии DRAM + NUWEI">
-          <img
-            src="./dram-nuwei-poster-vertical.webp"
-            alt="DRAM + NUWEI — 12 сентября в клубе «Рядом»"
-            loading="eager"
-          />
-        </a>
-        <a class="past-events-banner-link past-events-photo-link current-event-banner" href="./events/drum+nuwei/" aria-label="Открыть страницу события DRAM + NUWEI">
-          <span class="past-events-banner-index">[ 03 ]</span>
-          <span class="past-events-banner-event">
-            <strong>DRAM + NUWEI</strong>
-            <small>12.09.2026 · КЛУБ «РЯДОМ»</small>
-          </span>
-          <span class="past-events-banner-action">
-            <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
-              <path d="M6.4 18 5 16.6 14.6 7H6V5h12v12h-2V8.4z" />
-            </svg>
-          </span>
-        </a>
-      </figure>
-      </div>
-      <div class="top-event-aside">
-      <div class="event-description">
-        <a class="event-title-card" href="#event/2832121" aria-label="Открыть билеты на DRAM + NUWEI">
-          <span class="event-title-card-index">[ 03 ]</span>
-          <div class="event-title-card-copy">
-            <h1>DRAM + NUWEI</h1>
-            <p class="event-description-meta">12.09.2026 · КЛУБ «РЯДОМ»</p>
+    <section id="temnota-ii-photos" class="temnota-ii-screen" aria-label="Прошедшие события TMNT">
+      <h1 class="past-events-section-title">ПРОШЕДШИЕ СОБЫТИЯ</h1>
+      <div class="temnota-ii-gallery" aria-label="Прошедшие события TMNT">
+        <a class="temnota-ii-photo temnota-ii-photo-featured past-event-card-link past-event-card-dram" href="./events/drum+nuwei/" aria-label="Открыть DRAM + NUWEI">
+          <img src="./dram-nuwei-poster-vertical.webp" alt="Афиша DRAM + NUWEI" loading="eager" decoding="async" />
+          <div class="past-events-banner-link past-events-photo-link">
+            <span class="past-events-banner-index">[ 03 ]</span>
+            <span class="past-events-banner-event">
+              <strong>DRAM + NUWEI</strong>
+              <small>12.09.2026 · КЛУБ «РЯДОМ»</small>
+            </span>
+            <span class="past-events-banner-action">
+              <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M6.4 18 5 16.6 14.6 7H6V5h12v12h-2V8.4z" />
+              </svg>
+            </span>
           </div>
-          <span class="event-title-card-action">
-            БИЛЕТЫ
-            <svg class="corner-arrow" aria-hidden="true" viewBox="0 0 24 24">
-              <path d="M7 17h10V7M7 7l10 10" />
-            </svg>
-          </span>
         </a>
-      </div>
-      <!-- <div class="event-countdown" data-countdown-date="2026-09-12T23:00:00+03:00" aria-label="До события осталось">
-        <span class="event-countdown-kicker">ДО НАЧАЛА</span>
-        <div class="event-countdown-grid">
-          <span class="event-countdown-unit">
-            <strong data-countdown-days>00</strong>
-            <small data-countdown-days-label>дней</small>
-          </span>
-          <span class="event-countdown-unit">
-            <strong data-countdown-hours>00</strong>
-            <small data-countdown-hours-label>часов</small>
-          </span>
-          <span class="event-countdown-unit">
-            <strong data-countdown-minutes>00</strong>
-            <small data-countdown-minutes-label>минут</small>
-          </span>
-          <span class="event-countdown-unit">
-            <strong data-countdown-seconds>00</strong>
-            <small data-countdown-seconds-label>секунд</small>
-          </span>
-        </div>
-      </div> -->
-      <div class="top-event-ticket" id="event-ticket">
-        <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
-        <script>
-          radario.Widgets.Event({
-            params: {
-              accentColor: "rgba(210, 2, 2, 1)",
-              textBtnColor: "#FFFFFF",
-              backgroundColor: null,
-              configuration: 19,
-              isSkipTicketSelectStep: false,
-              showDynamicPricing: false,
-            },
-            buttonText: "БИЛЕТЫ",
-            buttonFontSize: "14px",
-            buttonPadding: "8px 16px",
-            buttonBorderRadius: "0",
-            standalone: false,
-            createButton: true,
-            eventId: 2832121,
-          });
-        </script>
-      </div>
-      </div>
-      </div>
-    </section>
-
-    <section id="temnota-ii-photos" class="temnota-ii-screen" aria-label="Фотографии TEMNOTA II">
-      <h2 class="past-events-section-title">ПРОШЕДШИЕ СОБЫТИЯ</h2>
-      <div class="temnota-ii-gallery" aria-label="Галерея фотографий TEMNOTA II">
         <a class="temnota-ii-photo temnota-ii-photo-featured past-event-card-link past-event-card-vinyl" href="./events/vinyl-practice/" aria-label="Открыть ВИНИЛ + ПРАКТИКА">
           <img src="./vinyl-practice-03.jpg" alt="Участник виниловой практики с пластинкой" loading="eager" decoding="async" />
           <div class="past-events-banner-link past-events-photo-link">

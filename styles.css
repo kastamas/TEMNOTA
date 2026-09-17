@@ -4835,3 +4835,21 @@ h2 {
     text-align: right;
   }
 }
+
+/* Archive cards use the same poster and separate caption shape as current events. */
+.poster-only.past-events-page .past-event-card-link > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.poster-only.past-events-page .past-event-card-link .past-events-photo-link {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  margin: 0;
+  border: 0;
+}

@@ -1748,11 +1748,6 @@ button.temnota-ii-photo {
   filter: grayscale(1) contrast(1.08);
 }
 
-/* Пока фотоотчёт не готов, в архиве используется афиша прошедшего события. */
-.past-event-card-vinyl img {
-  filter: grayscale(1) contrast(1.08);
-}
-
 .temnota-ii-photo-tall img {
   aspect-ratio: 3 / 4;
 }

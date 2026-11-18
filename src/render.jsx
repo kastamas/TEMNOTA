@@ -28,6 +28,9 @@ export function render(path) {
 <meta property="og:type" content="website" />
 <meta property="og:url" content="${escape(url)}" />
 <meta property="og:image" content="${escape(image)}" />
+<meta property="og:image:secure_url" content="${escape(image)}" />
+<meta property="og:image:alt" content="${title}" />
+${page.event?.slug === "temnota-3" ? '<meta property="og:image:type" content="image/jpeg" /><meta property="og:image:width" content="848" /><meta property="og:image:height" content="1200" />' : ""}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${title}" />
 <meta name="twitter:description" content="${description}" />

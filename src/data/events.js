@@ -82,6 +82,7 @@ export const events = [
     index: "06",
     venue: "КЛУБ «РЯДОМ»",
     cover: "/temnota-3-winter.webp",
+    socialImage: "/temnota-3-social.jpg",
     description:
       "26 декабря город накроет мощь и тьма ударных, а клуб «Рядом» станет ледяным дворцом 🗡",
     layout: "detail",

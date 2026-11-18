@@ -1,0 +1,12 @@
+import { createRoot, hydrateRoot } from "react-dom/client";
+import { App } from "./App.jsx";
+import { resolvePage } from "./routes.js";
+import "./styles.css";
+const pathname = window.location.pathname;
+const page = resolvePage(pathname);
+document.body.className = page.bodyClass;
+document.title = page.title;
+const root = document.getElementById("root");
+const app = <App pathname={pathname} />;
+if (root.hasChildNodes() && root.querySelector("*")) hydrateRoot(root, app);
+else createRoot(root).render(app);
